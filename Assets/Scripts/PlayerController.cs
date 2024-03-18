@@ -190,6 +190,7 @@ public class PlayerController : MonoBehaviour
             if (onGround == false)
             {
                 playerAnimator.SetTrigger("Land");
+                playerAnimator.SetBool("Grounded", true);
             }
 
             onGround = true;
@@ -198,7 +199,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground") onGround = false;
+        if (collision.gameObject.tag == "Ground")
+        {
+            playerAnimator.SetBool("Grounded", false) ;
+            onGround = false;
+        }
+
     }
 
 }
