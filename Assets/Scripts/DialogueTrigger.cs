@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
     public bool onCollideActivate;
     public bool activated = false;
+    public bool autoLoad = false;
 
     public void TriggerDialogue()
     {
@@ -17,7 +18,11 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!activated && onCollideActivate) TriggerDialogue();
+        if (!activated && onCollideActivate)
+        {
+            if(!autoLoad) TriggerDialogue();
+            else FindObjectOfType<DialogueManager>().automaticDialogue(dialogue);
+        }
 
     }
 }
