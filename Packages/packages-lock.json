@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.blendernodesgraph.core": {
+      "version": "file:C:/Users/Chelsea/Downloads/blender-nodes-subgraph-main/blender-nodes-subgraph-main",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "2.2.0",
       "depth": 0,
