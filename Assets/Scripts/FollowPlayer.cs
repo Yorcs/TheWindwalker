@@ -20,7 +20,7 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         transform.position = cube.transform.position + new Vector3(/*-1*/ 0, 1.5f, -3);
-        if (Input.GetKey(KeyCode.Mouse2)) CamOrbit();
+        //if (Input.GetKey(KeyCode.Mouse2)) CamOrbit();
     }
 
     private void CamOrbit()
