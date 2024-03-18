@@ -17,7 +17,10 @@ public class Teleport : MonoBehaviour
                 SceneManager.LoadScene("DreamLevelOne");
                 break;
             case "DreamLevelOne":
-                SceneManager.LoadScene("DreamLevelOne");
+                SceneManager.LoadScene("DreamLevelTwo");
+                break;
+            case "DreamLevelTwo":
+                SceneManager.LoadScene("DreamLevelThree");
                 break;
 
         }

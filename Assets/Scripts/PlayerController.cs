@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public float delayRegen = 3;
     public float delayCounter = 0;
     public bool regenHealth = false;
+    [SerializeField] float groundCheckDistance = 1f;
 
 
     private void Start()
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime * speed);
 
             //if space is pressed, jump
-            if (Input.GetKeyDown(KeyCode.Space) && onGround)
+            if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             }
@@ -145,7 +146,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground") onGround = true;
     }
@@ -153,6 +154,14 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Ground") onGround = false;
-    }
+    }*/
 
+    //referenced from https://www.reddit.com/r/Unity3D/comments/3c43ua/best_way_to_check_for_ground/
+    private bool isOnGround
+    {
+        get
+        {
+            return Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundCheckDistance);
+        }
+    }
 }
