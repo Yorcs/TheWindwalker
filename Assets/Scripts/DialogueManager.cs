@@ -136,6 +136,13 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);    
         }
+
+        if (GameObject.Find("ContinueButton"))
+        {
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().alpha = 1;
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().interactable = true;
+        }
+
         DisplayNextSentence();
     }
 
@@ -155,5 +162,45 @@ public class DialogueManager : MonoBehaviour
     public void endDialogue()
     {
         dialogueCanvas.SetActive(false);
+    }
+
+    //automaticaly load out dialogue
+    public void automaticDialogue(Dialogue dialogue)
+    {
+        dialogueCanvas.SetActive(true);
+        sentences.Clear();
+
+        if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = dialogue.name;
+
+        foreach (string line in dialogue.sentences)
+        {
+            sentences.Enqueue(line);
+        }
+
+        if (GameObject.Find("ContinueButton"))
+        {
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().alpha = 0;
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().interactable = false;
+        }
+
+        autoLoad();
+    }
+
+    public void autoLoad()
+    {
+        if (sentences.Count == 0)
+        {
+            endDialogue();
+            return;
+        }
+        string sentence = sentences.Dequeue();
+        if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = sentence;
+        StartCoroutine("showSentence");
+    }
+
+    IEnumerator showSentence()
+    {
+        yield return new WaitForSeconds(2);
+        autoLoad();
     }
 }
