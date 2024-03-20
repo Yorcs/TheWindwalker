@@ -46,13 +46,14 @@ public class DialogueManager : MonoBehaviour
         "*S Please let me give you something; you look exhausted. Use this to rest when you really need it."
      //Toyen walks away, while walking he walks past the healers stall
         "*H Toyen, I have something you need!"
-        "*T Oh, hopefully not one of those 'magic spells' that wil help me find my family in no time! All you need is a single hair and all that"
-        "*H Of course not Toyen, you take me for a woman with no knowledge of the soul? Pfah!"
-        "*H Soon, you will receive an offer, don't refuse it. But, it will be a dangerous one, so take this with you."
-        "*T There is no way I could pay you back for this a talisman, even as small as this would've required years to make..."
-        "*H It was given to me many years ago, back when I traveled, back when Totems like the ones here were not big enough to protect the villages."
-        "*H And now I give it too you, one of the few wanderers left, I sure don't need it!"
-        "*T Thank you..."
+        "*T I have all I need for now. Save your trinkets for another."
+        "*H You take me for a woman with no knowledge of the soul? Pfah! Some of us can sense stubborn facades..."
+        "*H ...And some of us can sense a little more. ...Something will be offered to you, Toyen. And to accept it safely, you accept this first."
+        "*T ...Please. I could not possibly take--"
+        "*H Do you need to be reminded? I too walked without the protection of grand village totems once. Many of us did. And this is what we managed with."
+        "*T ..."
+        "*H But it's just a relic now. I wasn't even the one who made it! Let me give it to someone who can still make some use of it."
+        "*T ...You have my thanks."
         "*H Any time! Now off you go, grand things are coming your way!"
     }
     public static string[] act1Scene3 =
@@ -120,7 +121,7 @@ public class DialogueManager : MonoBehaviour
     }
     public static string[] act2Scene2choice1 = 
     {
-        
+
     }
         
 
