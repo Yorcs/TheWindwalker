@@ -299,6 +299,39 @@ public class DialogueManager : MonoBehaviour
     {
         "*T Thank you for showing me the truth. Even if only for a moment."
     }
+    public static string[] act3scene3endinggood=
+    {
+        "*T Makobii."
+        "*M Why… why would you do such a thing? You won. Yet--"
+        "*T Sacrifice. It is called sacrifice."
+        "*T I… never needed this to begin with."
+        "*T I needed to be reminded of what was in front of me. You gave me that chance."
+        "*M Thank you, Toyen, for saving my life."
+        "*T That is gratitude. You have mastered mimicking it."
+        "*M I did not try to. Perhaps I now understand."
+    }
+    
+    public static string[] act3scene3endingbad = 
+    {
+        "*T I remember now..."
+        "*T You Makobii really are tricksters, leading me all this way in your act of desperation! what a joke--"
+        "*T All this for what! your death? All that just for me to continue my search!"
+        "*T Nothings changed! Ha! Nothing!"
+    }
+    public static string[] endinggood = 
+    {
+        "*S Toyen! Welcome! Did you complete your mission?"
+        "*T No. I did not."
+        "*S Oh… my apologies. Back on the road soon, then?"
+        "*T I was thinking that I may stay for awhile. Is that room you spoke of still available?"
+    }
+    public static string[] endingbad = 
+    {
+        "*T They're wrong, I'm so close."
+        "*T After all these years, I can see their faces."
+        "*T I can remember where they were."
+        "*T I'm so close..."
+    }
     //give a dialogue object to show
     public void StartDialogue(Dialogue dialogue)
     {
