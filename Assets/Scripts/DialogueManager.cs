@@ -20,108 +20,108 @@ public class DialogueManager : MonoBehaviour
     //ACT 1
     public static string[] act1Scene1 = 
     {//this is the short dialogue that would play during the first tutorial sequence
-            "*T Hmm... This areas too empty, I need to venture deeper"
+            "*T Hmm... This areas too empty, I need to venture deeper",
             "*T "
     };
     public static string[] act1Scene2 =
     {//This is the dialogue that woud play during the walking through the village scene
-        "*C GRR!"
-        "*C RUN! THE MAKOBII WILL STEAL YOUR DREAMS! Hahaha!"
-        "*L Why would you want to go sleep in the fields outside the village? You know what will come out to get you!"
-        "*L I know you think your safe because of the totems, but I remember a time before that safety."
+        "*C GRR!",
+        "*C RUN! THE MAKOBII WILL STEAL YOUR DREAMS! Hahaha!",
+        "*L Why would you want to go sleep in the fields outside the village? You know what will come out to get you!",
+        "*L I know you think your safe because of the totems, but I remember a time before that safety.",
      //Toyen aproaches the shopkeepers stall
-        "*S Toyen! Long time, no see. My favorite nomad, ever-roaming, searching for his long lost family! Any closer?"
-        "*T I know nothing more than I did 25 years ago. It is always the same."
-        "*S No return of more memories?"
-        "*T Not one."
-        "*S Well, thank you for these."
-        "*S Your last delivery saved my child from a terrible flu."
-        "*S I cannot repay you for what you do for us."
-        "*T There is no need."
-        "*T You know, if you ever want to settle here, in the village, there is a spare room upstairs. I trust you remember that."
-        "*T Thank you, but that won't be necessary."
-        "*S Toyen, not to step on your toes, but you may never find them, you know. It may be time to move on."
-        "*T Only I will decide when that is."
-        "*S Of course."
-        "*S Please let me give you something; you look exhausted. Use this to rest when you really need it."
+        "*S Toyen! Long time, no see. My favorite nomad, ever-roaming, searching for his long lost family! Any closer?",
+        "*T I know nothing more than I did 25 years ago. It is always the same.",
+        "*S No return of more memories?",
+        "*T Not one.",
+        "*S Well, thank you for these.",
+        "*S Your last delivery saved my child from a terrible flu.",
+        "*S I cannot repay you for what you do for us.",
+        "*T There is no need.",
+        "*T You know, if you ever want to settle here, in the village, there is a spare room upstairs. I trust you remember that.",
+        "*T Thank you, but that won't be necessary.",
+        "*S Toyen, not to step on your toes, but you may never find them, you know. It may be time to move on.",
+        "*T Only I will decide when that is.",
+        "*S Of course.",
+        "*S Please let me give you something; you look exhausted. Use this to rest when you really need it.",
      //Toyen walks away, while walking he walks past the healers stall
-        "*H Toyen, I have something you need!"
-        "*T Oh, hopefully not one of those 'magic spells' that wil help me find my family in no time! All you need is a single hair and all that"
-        "*H Of course not Toyen, you take me for a woman with no knowledge of the soul? Pfah!"
-        "*H Soon, you will receive an offer, don't refuse it. But, it will be a dangerous one, so take this with you."
-        "*T There is no way I could pay you back for this a talisman, even as small as this would've required years to make..."
-        "*H It was given to me many years ago, back when I traveled, back when Totems like the ones here were not big enough to protect the villages."
-        "*H And now I give it too you, one of the few wanderers left, I sure don't need it!"
-        "*T Thank you..."
+        "*H Toyen, I have something you need!",
+        "*T Oh, hopefully not one of those 'magic spells' that wil help me find my family in no time! All you need is a single hair and all that",
+        "*H Of course not Toyen, you take me for a woman with no knowledge of the soul? Pfah!",
+        "*H Soon, you will receive an offer, don't refuse it. But, it will be a dangerous one, so take this with you.",
+        "*T There is no way I could pay you back for this a talisman, even as small as this would've required years to make...",
+        "*H It was given to me many years ago, back when I traveled, back when Totems like the ones here were not big enough to protect the villages.",
+        "*H And now I give it too you, one of the few wanderers left, I sure don't need it!",
+        "*T Thank you...",
         "*H Any time! Now off you go, grand things are coming your way!"
-    }
+    };
     public static string[] act1Scene3 =
     {//Toyen meets the makobii
-        "*T What do you want with me?"
-        "*M So it is true. They do exist."
-        "*T Speak sense, makobii creature. I know what you are."
-        "*M Toyen. The man who moves with the wind. I have discovered something while walking your dreams. A memory buried so deeply in your soul that it is forever inaccessible."
-        "*T What? How do you--"
-        "*M A Forgotten memory. Everything since you were a child -- gone from this world. Such memories are a rarity, but you, you carry one. And its burden, as it seems."
-        "*M I can helpyou discover it."
-        "*T You are a dream-eater. You want off with it. I couldn't possibly want this enough to agree to such a ridiculous offer. Go away."
+        "*T What do you want with me?",
+        "*M So it is true. They do exist.",
+        "*T Speak sense, makobii creature. I know what you are.",
+        "*M Toyen. The man who moves with the wind. I have discovered something while walking your dreams. A memory buried so deeply in your soul that it is forever inaccessible.",
+        "*T What? How do you--",
+        "*M A Forgotten memory. Everything since you were a child -- gone from this world. Such memories are a rarity, but you, you carry one. And its burden, as it seems.",
+        "*M I can helpyou discover it.",
+        "*T You are a dream-eater. You want off with it. I couldn't possibly want this enough to agree to such a ridiculous offer. Go away.",
         "*M Tonight. I will appear to you once more. If you do not agree, then you will never see me again."
-    }
+    };
     public static string[] Walking1 =
     {//this section should feature a little bit of debate from Toyen whiles hes walking to the campsite
-        "*T A Makobii, it must be desperate, getting that close to a village, offering a deal..."
-        "*T It surely intends to eat whatever it thinks it can find..."
+        "*T A Makobii, it must be desperate, getting that close to a village, offering a deal...",
+        "*T It surely intends to eat whatever it thinks it can find...",
         "*T I might be just as desperate as it is..."
-    }
+    };
     public static string[] act1Scene4 =
     {
-        "*M Hello, Toyen. Have you made your decision?"
-        "*T I have. I will journey with you."
-        "*M I see."
+        "*M Hello, Toyen. Have you made your decision?",
+        "*T I have. I will journey with you.",
+        "*M I see.",
         "*M I will leave you alone tonight. We will begin tomorrow."
-    }
+    };
     public static string[] Walking2 =
     {
-        "*M Your energy is dim in our plane. You are almost invisible. Other makobii would barely notice you."
-        "*T What is that supposed to mean? And why are you following me?"
-        "*M It means you're quite boring."
-        "*T Does your kindnot have manners?"
-        "*M I have learned them from humans. Thank you."
-        "*T No. I would have had to do something for you that you are grateful for. Which I have not."
-        "*M That, I do not understand. Gratitude is very strange."
+        "*M Your energy is dim in our plane. You are almost invisible. Other makobii would barely notice you.",
+        "*T What is that supposed to mean? And why are you following me?",
+        "*M It means you're quite boring.",
+        "*T Does your kindnot have manners?",
+        "*M I have learned them from humans. Thank you.",
+        "*T No. I would have had to do something for you that you are grateful for. Which I have not.",
+        "*M That, I do not understand. Gratitude is very strange.",
         "*T You are strange. Go away."
-    }
-    public static string[] act2Scene1 = 
+    };
+    public static string[] act2Scene1 =
     {
-        "*M How often do humans eat?"
-        "*T We need a lot of food to stay alive. Many say three meals a day. I of course need a little extra, with how much we had to move today."
-        "*M I see. Thank you."
-        "*T You don't mean that."
-        "*T what are we going to do once we are inside my dream?"
-        "*M We will find out once we're there. "
-        "*T That's not very reassuring."
-        "*M How could you be “reassured,” I have not heard of that?"
+        "*M How often do humans eat?",
+        "*T We need a lot of food to stay alive. Many say three meals a day. I of course need a little extra, with how much we had to move today.",
+        "*M I see. Thank you.",
+        "*T You don't mean that.",
+        "*T what are we going to do once we are inside my dream?",
+        "*M We will find out once we're there. ",
+        "*T That's not very reassuring.",
+        "*M How could you be “reassured,” I have not heard of that?",
         "*T Never mind, let's just begin. "
-    }
-    public static string[] act2Scene2 = 
+    };
+    public static string[] act2Scene2 =
     {
-        "*M Come. Let us begin."
-        "*M Why is it these people hide inside their villages?"
-        "*T They aren't hiding from you. The totems were an afterthought."
-        "*M Then what is the reason?"
-        "*T They live together for connection and stability. The people are where they find happiness. They raise their families together."
-        "*M The children's dreams must be rich."
-        "*T They are not your food. This is my dream. Let's go."
-        "*M There is nowhere to go. This is what you are dreaming of; these humans, eating food on a bench."
-        "*M Join them..."
-        "*T What? Why?"
-        "*M We may learn how to go deeper into your subconscious"
+        "*M Come. Let us begin.",
+        "*M Why is it these people hide inside their villages?",
+        "*T They aren't hiding from you. The totems were an afterthought.",
+        "*M Then what is the reason?",
+        "*T They live together for connection and stability. The people are where they find happiness. They raise their families together.",
+        "*M The children's dreams must be rich.",
+        "*T They are not your food. This is my dream. Let's go.",
+        "*M There is nowhere to go. This is what you are dreaming of; these humans, eating food on a bench.",
+        "*M Join them...",
+        "*T What? Why?",
+        "*M We may learn how to go deeper into your subconscious",
         "*T I would rather not..."
-    }
-    public static string[] act2Scene2choice1 = 
+    };
+    public static string[] act2Scene2choice1 =
     {
-        
-    }
+
+    };
         
 
     //give a dialogue object to show
