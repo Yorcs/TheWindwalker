@@ -23,19 +23,19 @@ public class MovingDangerArea: MonoBehaviour
                 case "TutorialDream":
                     if (transform.position.z < 5)
                     {
-                        transform.position += new Vector3(0, 0, 0.1f);
+                        transform.position += new Vector3(0, 0, 1f*Time.deltaTime);
                     }
                     break;
                 case "DreamLevelOne":
                     if (transform.position.y < -67)
                     {
-                        transform.position += new Vector3(0, 0.001f, 0);
+                        transform.position += new Vector3(0, 1f*Time.deltaTime, 0);
                     }
                     break;
                 case "DreamLevelTwo":
                     if (transform.position.z < 27)
                     {
-                        transform.position += new Vector3(0, 0, 0.01f);
+                        transform.position += new Vector3(0, 0, 1f*Time.deltaTime);
                     }
                     break;
 
@@ -46,6 +46,8 @@ public class MovingDangerArea: MonoBehaviour
     
     public void resetPos()
     {
+        Debug.Log("back to start");
+        start = false;
         transform.position = startPos;
     }
 }

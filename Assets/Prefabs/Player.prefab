@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+
 --- !u!1 &8780349253838875260
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,12 +17,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+
 --- !u!4 &8301274687805569295
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   m_GameObject: {fileID: 8780349253838875260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -65,8 +68,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+
   - {fileID: 8301274687805569295}
   - {fileID: 1219936967806467254}
+
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8831665669514037920
@@ -183,6 +188,7 @@ MonoBehaviour:
   verticalInput: 0
   turnSpeed: 20
   speed: 5
+
   jumpForce: 13
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
@@ -191,6 +197,7 @@ MonoBehaviour:
   delayRegen: 3
   delayCounter: 0
   regenHealth: 0
+
   playerAnimator: {fileID: 2048554591878060343}
 --- !u!1001 &1685664884597316445
 PrefabInstance:
@@ -282,6 +289,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f415b3e23bb7f2d4688bbdcb615c58a2, type: 3}
       insertIndex: -1
+
       addedObject: {fileID: 2048554591878060343}
   m_SourcePrefab: {fileID: 100100000, guid: f415b3e23bb7f2d4688bbdcb615c58a2, type: 3}
 --- !u!4 &1219936967806467254 stripped
@@ -295,6 +303,7 @@ GameObject:
   m_PrefabInstance: {fileID: 1685664884597316445}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &2048554591878060343
+
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -302,6 +311,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992216774720415244}
+ 
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f415b3e23bb7f2d4688bbdcb615c58a2, type: 3}
   m_Controller: {fileID: 9100000, guid: 3671bd6bb7036f8458924d5456e8e244, type: 2}
@@ -315,3 +325,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &7879479044730682290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f415b3e23bb7f2d4688bbdcb615c58a2, type: 3}
+  m_PrefabInstance: {fileID: 7697550119389043801}
+  m_PrefabAsset: {fileID: 0}

@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public float delayRegen = 3;
     public float delayCounter = 0;
     public bool regenHealth = false;
+    [SerializeField] float groundCheckDistance = 1f;
 
     public Animator playerAnimator;
     
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
 
             //if space is pressed, jump
-            if (Input.GetKeyDown(KeyCode.Space) && onGround)
+            if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
             {
                 playerAnimator.SetTrigger("Jump");
                 GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -116,6 +117,7 @@ public class PlayerController : MonoBehaviour
                 transform.position = startPos;
                 transform.rotation = startRot;
                 health = 100;
+                if (GameObject.Find("DangerArea")) GameObject.Find("DangerArea").GetComponent<MovingDangerArea>().resetPos();
                 return;
             }
         }
@@ -178,12 +180,12 @@ public class PlayerController : MonoBehaviour
             transform.position = startPos;
             transform.rotation = startRot;
             health = 100;
-
+            if (GameObject.Find("DangerArea")) GameObject.Find("DangerArea").GetComponent<MovingDangerArea>().resetPos();
             return;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
@@ -199,6 +201,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+
         if (collision.gameObject.tag == "Ground")
         {
             playerAnimator.SetBool("Grounded", false) ;
@@ -207,4 +210,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+    //referenced from https://www.reddit.com/r/Unity3D/comments/3c43ua/best_way_to_check_for_ground/
+    private bool isOnGround
+    {
+        get
+        {
+            return Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, groundCheckDistance);
+        }
+    }
 }
