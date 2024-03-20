@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //used by objects to trigger dialogue, holds a dialogue object to trigger
 //https://www.youtube.com/watch?v=_nRzoTzeyxU&t=6s
@@ -20,7 +21,11 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (!activated && onCollideActivate)
         {
-            if(!autoLoad) TriggerDialogue();
+            if (!autoLoad) TriggerDialogue();
+            else if (SceneManager.GetActiveScene().name == "OutsideLevel1")
+            {
+                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.act2Scene1);
+            }
             else FindObjectOfType<DialogueManager>().automaticDialogue(dialogue);
         }
 

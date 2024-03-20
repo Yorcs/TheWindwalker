@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
 
             //if space is pressed, jump
-            if (Input.GetKeyDown(KeyCode.Space) && onGround)
+            if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
             {
                 playerAnimator.SetTrigger("Jump");
                 GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -166,6 +166,8 @@ public class PlayerController : MonoBehaviour
         {
             startPos = other.transform.position;
             startRot = other.transform.rotation;
+            string[] response = { "*T Found a safe area." };
+            FindObjectOfType<DialogueManager>().automaticDialogue(response);
         }    
     }
 
