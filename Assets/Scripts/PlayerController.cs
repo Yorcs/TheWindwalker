@@ -28,10 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool regenHealth = false;
     [SerializeField] float groundCheckDistance = 1f;
 
-    public Animator playerAnimator;
-    
 
- 
     private void Start()
     {
         //save the starting location/rotation for checkpoints
@@ -46,61 +43,25 @@ public class PlayerController : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
 
-            if (verticalInput != 0 ||horizontalInput!=0) //turns moving animations on if vertical input is detected
-            {
-                playerAnimator.SetBool("Moving", true);
-                
-            }
-            else
-            {
-                playerAnimator.SetBool("Moving", false);
-               
-            }
-
-            /* old movement stuff
             transform.Translate(Vector3.forward * Time.deltaTime * verticalInput * speed);
-            //transform.Translate(Vector3.right * Time.deltaTime * horizontalInput * speed);
-
+            //transform.Translate(Vector3.right * Time.deltaTime * horizontalInput);
             transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime * speed);
-
-            */
-
-
-            //new movement stuff start
-
-            Quaternion dir = Quaternion.LookRotation((Vector3.forward * verticalInput) + (Vector3.right * horizontalInput));
-            Vector3 tempVec = new Vector3(horizontalInput, 0f, verticalInput);
-
-            if (tempVec.magnitude > 0)
-            {
-                transform.rotation = dir;
-                transform.Translate(Vector3.forward  *tempVec.magnitude * Time.deltaTime * speed);
-            }
-            
-            
-            //new movement stuff end
-
-
 
             //if space is pressed, jump
             if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
             {
-                playerAnimator.SetTrigger("Jump");
                 GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             }
 
             //check for shift to sprint
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                playerAnimator.SetBool("Running", true);
                 speed = 8;
             }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                playerAnimator.SetBool("Running", false);
                 speed = 5;
-                
             }
         }
 
@@ -187,29 +148,13 @@ public class PlayerController : MonoBehaviour
 
     /*private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            if (onGround == false)
-            {
-                playerAnimator.SetTrigger("Land");
-                playerAnimator.SetBool("Grounded", true);
-            }
-
-            onGround = true;
-        }
+        if (collision.gameObject.tag == "Ground") onGround = true;
     }
 
     private void OnCollisionExit(Collision collision)
     {
-
-        if (collision.gameObject.tag == "Ground")
-        {
-            playerAnimator.SetBool("Grounded", false) ;
-            onGround = false;
-        }
-
-    }
-
+        if (collision.gameObject.tag == "Ground") onGround = false;
+    }*/
 
     //referenced from https://www.reddit.com/r/Unity3D/comments/3c43ua/best_way_to_check_for_ground/
     private bool isOnGround
