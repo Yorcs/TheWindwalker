@@ -354,6 +354,7 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+
     //displays the next sentence in the queue
     public void DisplayNextSentence()
     {
@@ -363,7 +364,29 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = sentence;
+        switch (sentence.Substring(0, 2))
+        {
+            case "*T":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Toyen";
+                break;
+            case "*M":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Makobii";
+                break;
+            case "*S":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Shopkeeper";
+                break;
+            case "*H":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Healer";
+                break;
+            case "*L":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Stern Mother";
+                break;
+            case "*C":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Child";
+                break;
+
+        }
+        if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = sentence.Substring(3);
     }
 
     //turns off the dialogue UI
@@ -394,6 +417,27 @@ public class DialogueManager : MonoBehaviour
         autoLoad();
     }
 
+    //automaticaly load out dialogue
+    public void automaticDialogue(string[] dialogue)
+    {
+        dialogueCanvas.SetActive(true);
+        sentences.Clear();
+
+
+        foreach (string line in dialogue)
+        {
+            sentences.Enqueue(line);
+        }
+
+        if (GameObject.Find("ContinueButton"))
+        {
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().alpha = 0;
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().interactable = false;
+        }
+        Debug.Log("showing ida");
+        autoLoad();
+    }
+
     public void autoLoad()
     {
         if (sentences.Count == 0)
@@ -402,7 +446,29 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = sentence;
+        switch (sentence.Substring(0, 2))
+        {
+            case "*T":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Toyen";
+                break;
+            case "*M":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Makobii";
+                break;
+            case "*S":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Shopkeeper";
+                break;
+            case "*H":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Healer";
+                break;
+            case "*L":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Stern Mother";
+                break;
+            case "*C":
+                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Child";
+                break;
+
+        }
+        if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = sentence.Substring(3);
         StartCoroutine("showSentence");
     }
 

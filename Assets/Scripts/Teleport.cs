@@ -8,6 +8,7 @@ public class Teleport : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        StopAllCoroutines();
         switch (SceneManager.GetActiveScene().name)
         {
             case "DreamTutorial":
