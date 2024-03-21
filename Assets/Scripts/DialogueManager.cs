@@ -186,18 +186,18 @@ public class DialogueManager : MonoBehaviour
         "*M Whose would it be but yours?",
         "*T If I touch it what happens?",
         "*M You will remember what ever memory it is, but I doubt its your lost memory, It's likely something else you've forgotten over the years. ",
-        "*M A... small meal... in Makobii terms... but..."
+        "*M A... small meal... in Makobii terms... but...",
+        "*T Makobii!",
+        "*T Makobii! Answer me!"
     };
     public static string[] act2Scene5choice2 =
     {
         "*T A small meal?! ",
-        "*T You just want to eat my memory, don't you! That's all you can think about!"
-    };
-    public static string[] act2Scene5Conclusion =
-    {
+        "*T You just want to eat my memory, don't you! That's all you can think about!",
         "*T Makobii!",
         "*T Makobii! Answer me!"
     };
+   
     public static string[] act2scene6choice1 =
     {
         "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
@@ -300,10 +300,9 @@ public class DialogueManager : MonoBehaviour
         "*T Humans know, deep down when they are being deceived, even if they still hope they aren't.",
         "*M I did not at first. But after our time together, I do not regret what I have done."
     };
-    public static string[] act3scene2karmahigh =
-    {
-        "*T Thank you for showing me the truth. Even if only for a moment."
-    };
+
+    public static string act3scene2karmahigh = "*T Thank you for showing me the truth. Even if only for a moment.";
+
     public static string[] act3scene3endinggood =
     {
         "*T Makobii.",
@@ -323,14 +322,14 @@ public class DialogueManager : MonoBehaviour
         "*T All this for what! your death? All that just for me to continue my search!",
         "*T Nothings changed! Ha! Nothing!"
     };
-    public static string[] endinggood =
+    public static string[] act3scene4endinggood =
     {
         "*S Toyen! Welcome! Did you complete your mission?",
         "*T No. I did not.",
         "*S Oh… my apologies. Back on the road soon, then?",
         "*T I was thinking that I may stay for awhile. Is that room you spoke of still available?"
     };
-    public static string[] endingbad =
+    public static string[] act3scene4endingbad =
     {
         "*T They're wrong, I'm so close.",
         "*T After all these years, I can see their faces.",
