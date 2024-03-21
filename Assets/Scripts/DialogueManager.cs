@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //manages the display of cutscene dialogue
 //https://www.youtube.com/watch?v=_nRzoTzeyxU&t=6s
@@ -443,6 +444,16 @@ public class DialogueManager : MonoBehaviour
     public void endDialogue()
     {
         dialogueCanvas.SetActive(false);
+        /*switch (SceneManager.GetActiveScene().name)
+        {
+            case "Act1Scene2":
+                SceneManager.LoadScene("Act1Scene3");
+                break;
+            case "Act1Scene3":
+                SceneManager.LoadScene("OutsideLevel1");
+                break;
+        }*/
+        FindObjectOfType<FadeTransition>().startFade();
     }
 
     //automaticaly load out dialogue
