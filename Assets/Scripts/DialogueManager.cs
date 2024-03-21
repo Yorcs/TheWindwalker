@@ -45,14 +45,15 @@ public class DialogueManager : MonoBehaviour
         "*S Of course.",
         "*S Please let me give you something; you look exhausted. Use this to rest when you really need it.",
      //Toyen walks away, while walking he walks past the healers stall
-        "*H Toyen, I have something you need!",
-        "*T Oh, hopefully not one of those 'magic spells' that wil help me find my family in no time! All you need is a single hair and all that",
-        "*H Of course not Toyen, you take me for a woman with no knowledge of the soul? Pfah!",
-        "*H Soon, you will receive an offer, don't refuse it. But, it will be a dangerous one, so take this with you.",
-        "*T There is no way I could pay you back for this a talisman, even as small as this would've required years to make...",
-        "*H It was given to me many years ago, back when I traveled, back when Totems like the ones here were not big enough to protect the villages.",
-        "*H And now I give it too you, one of the few wanderers left, I sure don't need it!",
-        "*T Thank you...",
+        "*H Toyen, I have something you need!"
+        "*T I have all I need for now. Save your trinkets for another."
+        "*H You take me for a woman with no knowledge of the soul? Pfah! Some of us can sense stubborn facades..."
+        "*H ...And some of us can sense a little more. ...Something will be offered to you, Toyen. And to accept it safely, you accept this first."
+        "*T ...Please. I could not possibly take--"
+        "*H Do you need to be reminded? I too walked without the protection of grand village totems once. Many of us did. And this is what we managed with."
+        "*T ..."
+        "*H But it's just a relic now. I wasn't even the one who made it! Let me give it to someone who can still make some use of it."
+        "*T ...You have my thanks."
         "*H Any time! Now off you go, grand things are coming your way!"
     };
     public static string[] act1Scene3 =
@@ -66,8 +67,8 @@ public class DialogueManager : MonoBehaviour
         "*M I can helpyou discover it.",
         "*T You are a dream-eater. You want off with it. I couldn't possibly want this enough to agree to such a ridiculous offer. Go away.",
         "*M Tonight. I will appear to you once more. If you do not agree, then you will never see me again."
-    };
-    public static string[] Walking1 =
+    }
+    public static string[] walking1 =
     {//this section should feature a little bit of debate from Toyen whiles hes walking to the campsite
         "*T A Makobii, it must be desperate, getting that close to a village, offering a deal...",
         "*T It surely intends to eat whatever it thinks it can find...",
@@ -79,8 +80,8 @@ public class DialogueManager : MonoBehaviour
         "*T I have. I will journey with you.",
         "*M I see.",
         "*M I will leave you alone tonight. We will begin tomorrow."
-    };
-    public static string[] Walking2 =
+    }
+    public static string[] walking2 =
     {
         "*M Your energy is dim in our plane. You are almost invisible. Other makobii would barely notice you.",
         "*T What is that supposed to mean? And why are you following me?",
@@ -100,7 +101,7 @@ public class DialogueManager : MonoBehaviour
         "*T what are we going to do once we are inside my dream?",
         "*M We will find out once we're there. ",
         "*T That's not very reassuring.",
-        "*M How could you be “reassured,” I have not heard of that?",
+        "*M How could you be 'reassured,' I have not heard of that?",
         "*T Never mind, let's just begin. "
     };
     public static string[] act2Scene2 =
@@ -120,10 +121,217 @@ public class DialogueManager : MonoBehaviour
     };
     public static string[] act2Scene2choice1 =
     {
+        //the makobii is pleased with toyen
+        "*T So, what is it that we learn from this?"
+        "*M I was wrong, you were so wrapped up in yourself, that your mind doesn't even picture their voices... "
+        "*M You decline these peoples advances. All of them. All the Time. Why?"
+        "*T It is for their own good. There is no point of connection if I am to leave again."
+        "*M How masochistic humans can be. "
+    }
+    public static string[] act2Scene2choice2 = 
+    {
+        "*M You decline their advances. All of them. All the time. Why?"
+        "*T It is for their own good. There is no point of connection if I am to leave again."
+        "*M Not even in a dream can you allow yourself to experience these connections and stability that you speak of. How masochistic humans can be. "
+    }
+    public static string[] act2Scene3 = 
+    {
+        "*M That was fruitless. Your dreams are insufferably boring."
+        "*M I will guide you to places of rest where the energy in my realm is stronger; perhaps that will trigger deeper dreams."
+    }
 
-    };
-        
+    public static string[] walking3 = 
+    {
+        "*T So how do we find my forgotten memory?"
+        "*M Usually, there would be memories scattered around your dreams.  Normal prey-"
+        "*T Pardon?"
+        "*M Normal... humans... napping in the forest would have had a couple fragments we could use to guide our journey, but you in your boundless boringness have none."
+        "*T Now humans would consider this too blunt, words hurt Makobii"
+        "*M Well, no matter the words it would hurt... perhaps words that are more like a sickle would be palatable"
+        "*T Haha, perhaps. But my life hasn't been uneventful, I often encounter trials and victories while going from village to village."
+        "*M But you didn't care, it didn't become part of you the way a memory fragment would."
+    }
+    public static string[] act2Scene4 = 
+    {
+        "*M How is it, that you are always tired and worn from your travels, but when you sleep you are fitful. I am getting nowhere. Have you always slept so terribly?"
+        "*T I suppose. The village folk notice this, too."
+        "*T I was given this sleeping agent by a shopkeeper."
+        "*M You should have tried that earlier."
+        "*T Apologies, creature. My memory is troubled, you should know"
+    }
+    public static string[] act2Scene5p1 = 
+    {
+        "*T I've never seen a place like this... Where is this location?"
+        "*M You willed us here. Do not ask me that."
+        "*T You keep saying you do not experience human emotions. What do you feel, then?"
+        "*M Hunger, mostly. The strive to continue living. But I am not quite sure why. I do not have anything to live for."
+        "*T Do makobii not care for other makobii?"
+        "*M Not especially. We see each other as competition."
+        "*T I do not have family, either. I only barely remember their faces from before I lost my memory. I live on like this anyway."
+        "*M Only to find them. Otherwise, would you not have been village-folk?"
+        "*T Perhaps."
+    }
+    public static string[] act2Scene5p2 = 
+    {
+        "*T We should turnback, makobii."
+        "*M We are so close..."
+        "*T To what?"
+        "*M A fragment."
+        "*T is it one of my memories?"
+        "*M Whose would it be but yours?"
+        "*T If I touch it what happens?"
+        "*M You will remember what ever memory it is, but I doubt its your lost memory, It's likely something else you've forgotten over the years. "
+        "*M A... small meal... in Makobii terms... but..."
+    }
+    public static string[] act2Scene5choice2 = 
+    {
+        "*T A small meal?! "
+        "*T You just want to eat my memory don't you! That's all you can think about!"
+    }
+    public static string[] act2Scene5Conclusion =
+    {
+        "*T Makobii!"
+        "*T Makobii! Answer me!"
+    }
+    public static string[] act2scene6choice1 =
+    {
+        "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!"
+        "*T Nobody would dare to venture with something like you without it. Do you think I'm stupid?"
+        "*T Maybe I am, I trusted some dream eater to not eat my dreams and leave me as a husk of the husk I already am!"
+        "*M Go to that cliff face, you might find your memories there, if you don't then jump of it!"
+    }
+       public static string[] act2scene6choice2 =
+    {
+        "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!"
+        "*T I'm sorry, but makobii aren't exactly harmless, it was for my protection. Besides, if any of us should be angry, it should be me!"
+        "*T You tried to eat my memories! While I was being attacked by some monster you were goin to eat my memories! What could I have done instead? "
+        "*M That cliff face, that is likely where you will find the memory."
+    }
+    public static string[] walking3 =
+    {
+        "*T Makobii!"
+        "*T Makobii, did you know humans need to cook food? We're different from animals in that regard"
+        "*T Why even tell me to go here if you aren't going to be there..."
+    }
+    public static string[] act2scene8 = 
+    {
+        "*T Makobii? Is that you?"
+        "*T Makobii?"
+        "*M You can't fight them, they don't want to kill you, they may mutilate you, but you must stay alive if they want your memory."
+        "*T How is there so many??"
+        "*M The Forgotten Trail, once found, appears to all makobii. I knew this would happen... I have been watching for them..."
+        "*M You have no more sleeping agent, and you have proven you cannot reach this subconscious without it. "
+        "*M Whatever you do, do not wakeup, or there is nothing we can do."
+        "*M You must run. Get the memory. Leave me here."
+    }
+    public static string[] act2scene8choice1 = 
+    {
+        "*T No... I made it this far because of you, I'll try to distract some of them."
+        "*T Hopefully lighten the load of how many you'll need to fight."
+        "*M TOYEN! RUN! YOU MUST NOT WAKE UP!"
 
+    }
+    public static string[] act2scene8choice2 = 
+    {
+        "*T Okay... Thank you..."
+    }
+    public static string[] act2scene9conseuences1 = 
+    {
+        "*T MAKOBII!"
+        "*T How dare you throw me off?! You instructed me to stay asleep."
+        "*T I cannot believe you, you terrible creature. How could I have agreed to this?"
+        "*M I'm sorry, I was too weak, I tried to get you too your memory..."
+    }
+    public static string[] act2scene9conseuences2 = 
+    {
+        "*T NO!"
+        "*T I was so close!"
+        "*T How dare you stay there to defend me, tell me to run for it on my own?!"
+        "*T You know I can't make it in this place on my own."
+        "*T I cannot believe you, you terrible creature. How could I have agreed to this?"
+        "*M We, couldn't just make a dash for it together, there were too many of them"
+    }
+    public static string[] act2scene9 = 
+    {
+        "*T What... what is wrong with your body?"
+        "*M This form. I am... losing control of it."
+        "*T Why?"
+        "*M I am starving, Toyen."
+        "*T When... was the last time you ate?"
+        "*M Long before we met. Most humans reside in villages now."
+        "*M No matter how long I walked your dreams, I could not take from them, lest I slow down finding your Forgotten memory. The temptation was unimaginable."
+        "*M There is one way, Toyen."
+        "*M I can bring you into my realm using the last of my control. There, you can pursue the memory."
+        "*T And what of you?"
+        "*M It does not matter. More makobii will come soon. There is no time."
+        "*T I can knock myself out."
+        "*M No."
+        "*T I know of herbs that can induce a coma."
+        "*M Toyen. There is no time..."
+    }
+    public static string[] act3scene1 = 
+    {
+        "*T Please… do not make me fight you."
+        "*T We have journeyed for so long together."
+        "*T Please. I just want to end all of this."
+    }
+    public static string[] act3scene2p1 = 
+    {
+        "*M This is it. This is what you have been searching for all this time."
+        "*M Do you feel those strange, human things? Peace? Happiness?"
+        "*T Makobii, why are you not devouring it? You are right here."
+        "*M We are not in your mind, we are in a shared dream, here we are equals, and you got to the memory first...
+        "*T What… happens after?"
+        "*M When you leave this place, I will likely die."
+    }
+    public static string[] act3scene2p2 = 
+    {
+        "*T Before we met, I had not journeyed with another thing since I lost my memories."
+        "*T You were my first companion, yet I treated you horribly. I panicked and nearly killed you."
+        "*M I do not blame you. I did not care for you at all."
+        "*M I did everything in my power to get to the Forgotten memory as fast as possible, even if it meant tormenting you."
+        "*M I was terrible to you across our entire journey."
+        "*T I knew you never truly wanted to help me, makobii."
+        "*T Humans know, deep down when they are being deceived, even if they still hope they aren't."
+        "*M I did not at first. But after our time together, I do not regret what I have done."
+    }
+    public staatic string[] act3scene2karmahigh =
+    {
+        "*T Thank you for showing me the truth. Even if only for a moment."
+    }
+    public static string[] act3scene3endinggood=
+    {
+        "*T Makobii."
+        "*M Why… why would you do such a thing? You won. Yet--"
+        "*T Sacrifice. It is called sacrifice."
+        "*T I… never needed this to begin with."
+        "*T I needed to be reminded of what was in front of me. You gave me that chance."
+        "*M Thank you, Toyen, for saving my life."
+        "*T That is gratitude. You have mastered mimicking it."
+        "*M I did not try to. Perhaps I now understand."
+    }
+    
+    public static string[] act3scene3endingbad = 
+    {
+        "*T I remember now..."
+        "*T You Makobii really are tricksters, leading me all this way in your act of desperation! what a joke--"
+        "*T All this for what! your death? All that just for me to continue my search!"
+        "*T Nothings changed! Ha! Nothing!"
+    }
+    public static string[] endinggood = 
+    {
+        "*S Toyen! Welcome! Did you complete your mission?"
+        "*T No. I did not."
+        "*S Oh… my apologies. Back on the road soon, then?"
+        "*T I was thinking that I may stay for awhile. Is that room you spoke of still available?"
+    }
+    public static string[] endingbad = 
+    {
+        "*T They're wrong, I'm so close."
+        "*T After all these years, I can see their faces."
+        "*T I can remember where they were."
+        "*T I'm so close..."
+    }
     //give a dialogue object to show
     public void StartDialogue(Dialogue dialogue)
     {
