@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/DreamTutorial.unity
     guid: 61c67e8aae1b84da0af21ec6443dd7ec
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/Act1Scene2.unity
+    guid: 1cb6203c11561ff49a48e54b98fdc3f1
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Act1Scene3.unity
+    guid: 3225cc34e985e4a4abcef1e2a0bf8d07
+  - enabled: 1
     path: Assets/Scenes/OutsideLevel1.unity
     guid: d570ef4da0cbe6c4ba7c12b0bd117c02
   - enabled: 1

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //manages the display of cutscene dialogue
 //https://www.youtube.com/watch?v=_nRzoTzeyxU&t=6s
@@ -9,6 +11,9 @@ public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences = new Queue<string>();
     [SerializeField] private GameObject dialogueCanvas;
+    private string currSentence;
+    private bool loadingText = false;
+
     //cast
     //T = Toyen
     //M = Makobii
@@ -181,18 +186,18 @@ public class DialogueManager : MonoBehaviour
         "*M Whose would it be but yours?",
         "*T If I touch it what happens?",
         "*M You will remember what ever memory it is, but I doubt its your lost memory, It's likely something else you've forgotten over the years. ",
-        "*M A... small meal... in Makobii terms... but..."
+        "*M A... small meal... in Makobii terms... but...",
+        "*T Makobii!",
+        "*T Makobii! Answer me!"
     };
     public static string[] act2Scene5choice2 =
     {
         "*T A small meal?! ",
-        "*T You just want to eat my memory, don't you! That's all you can think about!"
-    };
-    public static string[] act2Scene5Conclusion =
-    {
+        "*T You just want to eat my memory, don't you! That's all you can think about!",
         "*T Makobii!",
         "*T Makobii! Answer me!"
     };
+   
     public static string[] act2scene6choice1 =
     {
         "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
@@ -295,10 +300,9 @@ public class DialogueManager : MonoBehaviour
         "*T Humans know, deep down when they are being deceived, even if they still hope they aren't.",
         "*M I did not at first. But after our time together, I do not regret what I have done."
     };
-    public static string[] act3scene2karmahigh =
-    {
-        "*T Thank you for showing me the truth. Even if only for a moment."
-    };
+
+    public static string act3scene2karmahigh = "*T Thank you for showing me the truth. Even if only for a moment.";
+
     public static string[] act3scene3endinggood =
     {
         "*T Makobii.",
@@ -318,14 +322,14 @@ public class DialogueManager : MonoBehaviour
         "*T All this for what! your death? All that just for me to continue my search!",
         "*T Nothings changed! Ha! Nothing!"
     };
-    public static string[] endinggood =
+    public static string[] act3scene4endinggood =
     {
         "*S Toyen! Welcome! Did you complete your mission?",
         "*T No. I did not.",
         "*S Oh… my apologies. Back on the road soon, then?",
         "*T I was thinking that I may stay for awhile. Is that room you spoke of still available?"
     };
-    public static string[] endingbad =
+    public static string[] act3scene4endingbad =
     {
         "*T They're wrong, I'm so close.",
         "*T After all these years, I can see their faces.",
@@ -354,45 +358,101 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    public void StartDialogue(string[] dialogue)
+    {
+        dialogueCanvas.SetActive(true);
+        sentences.Clear();
+
+        foreach (string sentence in dialogue)
+        {
+            sentences.Enqueue(sentence);
+        }
+
+        if (GameObject.Find("ContinueButton"))
+        {
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().alpha = 1;
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().interactable = true;
+        }
+
+        DisplayNextSentence();
+    }
+
+    IEnumerator ProgressSentence(string sentence)
+    {
+        //load out each character in the sentence one by one to be more dynamic
+        currSentence = sentence.Substring(3);
+        loadingText = true;
+        if (GameObject.Find("Dialogue"))
+        {
+            GameObject.Find("Dialogue").GetComponent<Text>().text = "";
+            foreach (char letter in currSentence.ToCharArray())
+            {
+                GameObject.Find("Dialogue").GetComponent<Text>().text += letter;
+                yield return new WaitForSeconds(0.03f);
+            }
+            //GameObject.Find("Dialogue").GetComponent<Text>().text = sentence.Substring(3);
+        }
+        loadingText = false;
+    }
 
     //displays the next sentence in the queue
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+   
+        if (loadingText)
         {
-            endDialogue();
-            return;
+            StopAllCoroutines();
+            if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = currSentence;
+            loadingText = false;
         }
-        string sentence = sentences.Dequeue();
-        switch (sentence.Substring(0, 2))
+        else
         {
-            case "*T":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Toyen";
-                break;
-            case "*M":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Makobii";
-                break;
-            case "*S":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Shopkeeper";
-                break;
-            case "*H":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Healer";
-                break;
-            case "*L":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Stern Mother";
-                break;
-            case "*C":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Child";
-                break;
+            if (sentences.Count == 0)
+            {
+                endDialogue();
+                return;
+            }
+            string sentence = sentences.Dequeue();
+            switch (sentence.Substring(0, 2))
+            {
+                case "*T":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Toyen";
+                    break;
+                case "*M":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Makobii";
+                    break;
+                case "*S":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Shopkeeper";
+                    break;
+                case "*H":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Healer";
+                    break;
+                case "*L":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Stern Mother";
+                    break;
+                case "*C":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Child";
+                    break;
 
-        }
-        if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = sentence.Substring(3);
+            }
+            StartCoroutine(ProgressSentence(sentence));
+        }     
     }
 
     //turns off the dialogue UI
     public void endDialogue()
     {
         dialogueCanvas.SetActive(false);
+        /*switch (SceneManager.GetActiveScene().name)
+        {
+            case "Act1Scene2":
+                SceneManager.LoadScene("Act1Scene3");
+                break;
+            case "Act1Scene3":
+                SceneManager.LoadScene("OutsideLevel1");
+                break;
+        }*/
+        if(SceneManager.GetActiveScene().name == "Act1Scene2" || SceneManager.GetActiveScene().name == "Act1Scene3") FindObjectOfType<FadeTransition>().startFade();
     }
 
     //automaticaly load out dialogue

@@ -8,6 +8,7 @@ public class MovingDangerArea: MonoBehaviour
 {
     public Vector3 startPos;
     public bool start = false;
+    public bool reverseDirection = false;
 
     void Start()
     {
@@ -20,10 +21,18 @@ public class MovingDangerArea: MonoBehaviour
         {
             switch (SceneManager.GetActiveScene().name)
             {
-                case "TutorialDream":
-                    if (transform.position.z < 5)
+                case "DreamTutorial":
+                    if (transform.position.x < 13 && !reverseDirection)
                     {
-                        transform.position += new Vector3(0, 0, 1f*Time.deltaTime);
+                        transform.position += new Vector3(3f * Time.deltaTime, 0, 0);
+                    }else if(transform.position.x > -9)
+                    {
+                        reverseDirection = true;
+                        transform.position -= new Vector3(3f * Time.deltaTime, 0, 0);
+                    }
+                    else
+                    {
+                        reverseDirection = false;
                     }
                     break;
                 case "DreamLevelOne":
