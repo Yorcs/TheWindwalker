@@ -12,7 +12,7 @@ public class Teleport : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "DreamTutorial":
-                SceneManager.LoadScene("OutsideLevel1");
+                SceneManager.LoadScene("Act1Scene2");
                 break;
             case "OutsideLevel1":
                 SceneManager.LoadScene("DreamLevelOne");

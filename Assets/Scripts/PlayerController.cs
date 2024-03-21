@@ -168,6 +168,7 @@ public class PlayerController : MonoBehaviour
             startRot = other.transform.rotation;
             string[] response = { "*T Found a safe area." };
             FindObjectOfType<DialogueManager>().automaticDialogue(response);
+            other.GetComponent<ParticleSystem>().Stop();
         }    
     }
 

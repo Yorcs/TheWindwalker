@@ -453,7 +453,7 @@ public class DialogueManager : MonoBehaviour
                 SceneManager.LoadScene("OutsideLevel1");
                 break;
         }*/
-        FindObjectOfType<FadeTransition>().startFade();
+        if(SceneManager.GetActiveScene().name == "Act1Scene2" || SceneManager.GetActiveScene().name == "Act1Scene3") FindObjectOfType<FadeTransition>().startFade();
     }
 
     //automaticaly load out dialogue
