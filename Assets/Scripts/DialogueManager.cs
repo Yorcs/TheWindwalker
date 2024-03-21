@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,9 @@ public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences = new Queue<string>();
     [SerializeField] private GameObject dialogueCanvas;
+    private string currSentence;
+    private bool loadingText = false;
+
     //cast
     //T = Toyen
     //M = Makobii
@@ -354,39 +358,85 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    public void StartDialogue(string[] dialogue)
+    {
+        dialogueCanvas.SetActive(true);
+        sentences.Clear();
+
+        foreach (string sentence in dialogue)
+        {
+            sentences.Enqueue(sentence);
+        }
+
+        if (GameObject.Find("ContinueButton"))
+        {
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().alpha = 1;
+            GameObject.Find("ContinueButton").GetComponent<CanvasGroup>().interactable = true;
+        }
+
+        DisplayNextSentence();
+    }
+
+    IEnumerator ProgressSentence(string sentence)
+    {
+        //load out each character in the sentence one by one to be more dynamic
+        currSentence = sentence.Substring(3);
+        loadingText = true;
+        if (GameObject.Find("Dialogue"))
+        {
+            GameObject.Find("Dialogue").GetComponent<Text>().text = "";
+            foreach (char letter in currSentence.ToCharArray())
+            {
+                GameObject.Find("Dialogue").GetComponent<Text>().text += letter;
+                yield return new WaitForSeconds(0.03f);
+            }
+            //GameObject.Find("Dialogue").GetComponent<Text>().text = sentence.Substring(3);
+        }
+        loadingText = false;
+    }
 
     //displays the next sentence in the queue
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+   
+        if (loadingText)
         {
-            endDialogue();
-            return;
+            StopAllCoroutines();
+            if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = currSentence;
+            loadingText = false;
         }
-        string sentence = sentences.Dequeue();
-        switch (sentence.Substring(0, 2))
+        else
         {
-            case "*T":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Toyen";
-                break;
-            case "*M":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Makobii";
-                break;
-            case "*S":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Shopkeeper";
-                break;
-            case "*H":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Healer";
-                break;
-            case "*L":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Stern Mother";
-                break;
-            case "*C":
-                if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Child";
-                break;
+            if (sentences.Count == 0)
+            {
+                endDialogue();
+                return;
+            }
+            string sentence = sentences.Dequeue();
+            switch (sentence.Substring(0, 2))
+            {
+                case "*T":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Toyen";
+                    break;
+                case "*M":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Makobii";
+                    break;
+                case "*S":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Shopkeeper";
+                    break;
+                case "*H":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Healer";
+                    break;
+                case "*L":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Stern Mother";
+                    break;
+                case "*C":
+                    if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = "Child";
+                    break;
 
-        }
-        if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = sentence.Substring(3);
+            }
+            StartCoroutine(ProgressSentence(sentence));
+        }     
     }
 
     //turns off the dialogue UI
