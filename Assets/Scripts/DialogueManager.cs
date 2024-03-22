@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour
     };
     public static string[] act1Scene2 =
     {//This is the dialogue that woud play during the walking through the village scene
+        "*T Let's go into town...",
         "*C GRR!",
         "*C RUN! THE MAKOBII WILL STEAL YOUR DREAMS! Hahaha!",
         "*L Why would you want to go sleep in the fields outside the village? You know what will come out to get you!",
@@ -340,6 +341,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         dialogueCanvas.SetActive(true);
+        dialogueCanvas.GetComponent<CanvasGroup>().alpha = 1;
+        dialogueCanvas.GetComponent<CanvasGroup>().interactable = true;
         sentences.Clear();
 
         if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = dialogue.name;
@@ -361,6 +364,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(string[] dialogue)
     {
         dialogueCanvas.SetActive(true);
+        dialogueCanvas.GetComponent<CanvasGroup>().alpha = 1;
+        dialogueCanvas.GetComponent<CanvasGroup>().interactable = true;
         sentences.Clear();
 
         foreach (string sentence in dialogue)
@@ -442,7 +447,9 @@ public class DialogueManager : MonoBehaviour
     //turns off the dialogue UI
     public void endDialogue()
     {
-        dialogueCanvas.SetActive(false);
+        //dialogueCanvas.SetActive(false);
+        dialogueCanvas.GetComponent<CanvasGroup>().alpha = 0;
+        dialogueCanvas.GetComponent<CanvasGroup>().interactable = false;
         /*switch (SceneManager.GetActiveScene().name)
         {
             case "Act1Scene2":
@@ -452,13 +459,20 @@ public class DialogueManager : MonoBehaviour
                 SceneManager.LoadScene("OutsideLevel1");
                 break;
         }*/
-        if(SceneManager.GetActiveScene().name == "Act1Scene2" || SceneManager.GetActiveScene().name == "Act1Scene3") FindObjectOfType<FadeTransition>().startFade();
+        if (SceneManager.GetActiveScene().name == "Act2Scene2")
+        {
+            FindObjectOfType<ChoiceManager>().GetComponent<CanvasGroup>().alpha = 1;
+            FindObjectOfType<ChoiceManager>().GetComponent<CanvasGroup>().interactable = true;
+        }
+        if (SceneManager.GetActiveScene().name == "Act1Scene2" || SceneManager.GetActiveScene().name == "Act1Scene3") FindObjectOfType<FadeTransition>().startFade();
     }
 
     //automaticaly load out dialogue
     public void automaticDialogue(Dialogue dialogue)
     {
         dialogueCanvas.SetActive(true);
+        dialogueCanvas.GetComponent<CanvasGroup>().alpha = 1;
+        dialogueCanvas.GetComponent<CanvasGroup>().interactable = true;
         sentences.Clear();
 
         if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = dialogue.name;
@@ -481,6 +495,8 @@ public class DialogueManager : MonoBehaviour
     public void automaticDialogue(string[] dialogue)
     {
         dialogueCanvas.SetActive(true);
+        dialogueCanvas.GetComponent<CanvasGroup>().alpha = 1;
+        dialogueCanvas.GetComponent<CanvasGroup>().interactable = true;
         sentences.Clear();
 
 
@@ -534,7 +550,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator showSentence()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.5f);
         autoLoad();
     }
 }

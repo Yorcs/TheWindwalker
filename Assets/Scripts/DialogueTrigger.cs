@@ -24,7 +24,11 @@ public class DialogueTrigger : MonoBehaviour
             if (!autoLoad) TriggerDialogue();
             else if (SceneManager.GetActiveScene().name == "OutsideLevel1")
             {
-                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.act2Scene1);
+                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking1);
+            }
+            else if (SceneManager.GetActiveScene().name == "OutsideLevel2")
+            {
+                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking2);
             }
             else FindObjectOfType<DialogueManager>().automaticDialogue(dialogue);
         }

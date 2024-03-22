@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4634247191446593446}
   - component: {fileID: 6880835054399427658}
   - component: {fileID: 6207064162049406261}
+  - component: {fileID: 5991192761004609006}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
@@ -105,6 +106,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &5991192761004609006
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545479983052898721}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2856290595560032088
 GameObject:
   m_ObjectHideFlags: 0
