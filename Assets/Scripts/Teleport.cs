@@ -9,7 +9,8 @@ public class Teleport : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         StopAllCoroutines();
-        switch (SceneManager.GetActiveScene().name)
+        FindObjectOfType<FadeTransition>().startFade();
+        /*switch (SceneManager.GetActiveScene().name)
         {
             case "DreamTutorial":
                 SceneManager.LoadScene("Act1Scene2");
@@ -24,6 +25,6 @@ public class Teleport : MonoBehaviour
                 SceneManager.LoadScene("DreamLevelThree");
                 break;
 
-        }
+        }*/
     }
 }

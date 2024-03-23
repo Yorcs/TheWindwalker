@@ -18,7 +18,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void startGame()
     {
-        SceneManager.LoadScene("DreamTutorial");
+        FindObjectOfType<FadeTransition>().startFade();
     }
 
     public void quitGame()

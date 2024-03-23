@@ -25,11 +25,23 @@ public class FadeTransition : MonoBehaviour
             yield return new WaitForSeconds(1);
             switch (SceneManager.GetActiveScene().name)
             {
+                case "MainMenu":
+                    SceneManager.LoadScene("DreamTutorial");
+                    break;
+                case "DreamTutorial":
+                    SceneManager.LoadScene("Act1Scene2");
+                    break;
                 case "Act1Scene2":
                     SceneManager.LoadScene("Act1Scene3");
                     break;
                 case "Act1Scene3":
                     SceneManager.LoadScene("OutsideLevel1");
+                    break;
+                case "OutsideLevel1":
+                    SceneManager.LoadScene("Act1Scene4");
+                    break;
+                case "Act1Scene4":
+                    SceneManager.LoadScene("OutsideLevel2");
                     break;
             }     
             StartCoroutine(fadeOut());
