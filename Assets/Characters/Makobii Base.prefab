@@ -162,6 +162,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2562034003841842293, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 355846081319386868}
+    - targetCorrespondingSourceObject: {fileID: -4953499709512668494, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2249621592230499328}
   m_SourcePrefab: {fileID: 100100000, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
 --- !u!1 &208081645138824660 stripped
 GameObject:
@@ -322,6 +325,23 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
+--- !u!1 &1886110214404348691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4953499709512668494, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
+  m_PrefabInstance: {fileID: 2408701761292448161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!122 &2249621592230499328
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886110214404348691}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4288258432
+  m_Size: 1.77
 --- !u!4 &2803442389745456714 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
