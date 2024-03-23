@@ -74,10 +74,10 @@ public class MovingDangerArea: MonoBehaviour
             
 
 
-            switch (SceneManager.GetActiveScene().name)
+            /*switch (SceneManager.GetActiveScene().name)
             {
                 case "DreamTutorial":
-                    /*if (transform.position.x < 13 && !reverseDirection)
+                    if (transform.position.x < 13 && !reverseDirection)
                     {
                         transform.position += new Vector3(3f * Time.deltaTime, 0, 0);
                     }else if(transform.position.x > -9)
@@ -88,7 +88,7 @@ public class MovingDangerArea: MonoBehaviour
                     else
                     {
                         reverseDirection = false;
-                    }*/
+                    }
                     break;
                 case "DreamLevelOne":
                     if (transform.position.y < -67)
@@ -103,7 +103,7 @@ public class MovingDangerArea: MonoBehaviour
                     }
                     break;
 
-            }
+            }*/
         }
         
     }

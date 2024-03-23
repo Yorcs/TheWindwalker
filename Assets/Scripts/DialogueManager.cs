@@ -447,6 +447,7 @@ public class DialogueManager : MonoBehaviour
     //turns off the dialogue UI
     public void endDialogue()
     {
+        PlayerController.LockedPlayer = false;
         //dialogueCanvas.SetActive(false);
         dialogueCanvas.GetComponent<CanvasGroup>().alpha = 0;
         dialogueCanvas.GetComponent<CanvasGroup>().interactable = false;

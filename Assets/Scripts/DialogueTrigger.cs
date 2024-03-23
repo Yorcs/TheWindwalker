@@ -11,6 +11,7 @@ public class DialogueTrigger : MonoBehaviour
     public bool onCollideActivate;
     public bool activated = false;
     public bool autoLoad = false;
+    public bool stopPlayer = false;
 
     public void TriggerDialogue()
     {
@@ -19,6 +20,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (stopPlayer) PlayerController.LockedPlayer = true;
+
         if (!activated && onCollideActivate)
         {
             if (!autoLoad) TriggerDialogue();
@@ -29,6 +32,14 @@ public class DialogueTrigger : MonoBehaviour
             else if (SceneManager.GetActiveScene().name == "OutsideLevel2")
             {
                 FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking2);
+            }
+            else if (SceneManager.GetActiveScene().name == "OutsideLevel3")
+            {
+                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking3);
+            }
+            else if (SceneManager.GetActiveScene().name == "DreamLevelOne")
+            {
+                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.act2Scene5p1);
             }
             else FindObjectOfType<DialogueManager>().automaticDialogue(dialogue);
         }

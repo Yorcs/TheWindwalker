@@ -43,6 +43,21 @@ public class FadeTransition : MonoBehaviour
                 case "Act1Scene4":
                     SceneManager.LoadScene("OutsideLevel2");
                     break;
+                case "OutsideLevel2":
+                    SceneManager.LoadScene("Act2Scene2");
+                    break;
+                case "Act2Scene2":
+                    SceneManager.LoadScene("Act2Scene3");
+                    break;
+                case "Act2Scene3":
+                    SceneManager.LoadScene("OutsideLevel3");
+                    break;
+                case "OutsideLevel3":
+                    SceneManager.LoadScene("Act2Scene4");
+                    break;
+                case "Act2Scene4":
+                    SceneManager.LoadScene("DreamLevelOne");
+                    break;
             }     
             StartCoroutine(fadeOut());
         }
