@@ -199,7 +199,7 @@ MonoBehaviour:
     nodeIDs: 02000000
     parentGroupID: -1
     childGroupIDs: 1a000000
-    adaptiveLODQuality: 1
+    adaptiveLODQuality: 0.68
     shadowTextureQuality: 3
     enableWelding: 1
     enableAmbientOcclusion: 1
@@ -316,7 +316,7 @@ MonoBehaviour:
     nodeIDs: 1b000000800000008100000083000000
     parentGroupID: 1
     childGroupIDs: 
-    lodQualityMultiplier: 2
+    lodQualityMultiplier: 0.45
     geometryMode: 2
     materialBranch: {fileID: 0}
     materialBreak: {fileID: 0}
