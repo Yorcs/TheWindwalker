@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 //manages the display of cutscene dialogue
 //https://www.youtube.com/watch?v=_nRzoTzeyxU&t=6s
@@ -13,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogueCanvas;
     private string currSentence;
     private bool loadingText = false;
+    private int imageCounter = 0;
+    
 
     //cast
     //T = Toyen
@@ -403,7 +406,8 @@ public class DialogueManager : MonoBehaviour
     //displays the next sentence in the queue
     public void DisplayNextSentence()
     {
-   
+        
+
         if (loadingText)
         {
             StopAllCoroutines();
@@ -417,6 +421,11 @@ public class DialogueManager : MonoBehaviour
                 endDialogue();
                 return;
             }
+
+            imageCounter++;
+            Debug.Log("/ UIAssets / Cutscenes / A1S3 / a1s3_" + imageCounter + ".png");
+            if (GameObject.Find("CutsceneImage") && imageCounter < act1Scene3.Length) GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = Resources.Load<Sprite>("A1S3/a1s3_1.png");
+
             string sentence = sentences.Dequeue();
             switch (sentence.Substring(0, 2))
             {
