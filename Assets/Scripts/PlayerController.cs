@@ -175,6 +175,16 @@ public class PlayerController : MonoBehaviour
         }    
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Damage") //if player stays in a damage object, lose health
+        {
+            loseHealth = true;
+            regenHealth = false;
+            delayCounter = 0;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         //stop losing health if you leave a damage object
