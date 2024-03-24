@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         //save the starting location/rotation for checkpoints
         startPos = transform.position;
         startRot = transform.rotation;
+        if (GameObject.Find("ShardsFound")) GameObject.Find("ShardsFound").GetComponent<Text>().text = ChoiceManager.shardsFound + "/3";
     }
 
     private void Update()
@@ -116,7 +117,7 @@ public class PlayerController : MonoBehaviour
         if (loseHealth)
         {
             //deduct health and display on UI
-            health -= 10 * Time.deltaTime;
+            health -= 15 * Time.deltaTime;
             display.value = health;
 
             //if health is less than 0, send the player back to the previous checkpoint

@@ -24,6 +24,8 @@ public class ChoiceManager: MonoBehaviour
     public Text pos;
     public Text neg;
 
+    public static int shardsFound = 2;
+
     private void Awake()
     {
         switch (SceneManager.GetActiveScene().name)

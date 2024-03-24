@@ -25,24 +25,34 @@ public class DialogueTrigger : MonoBehaviour
         if (!activated && onCollideActivate)
         {
             if (!autoLoad) TriggerDialogue();
-            else if (SceneManager.GetActiveScene().name == "OutsideLevel1")
+            else
             {
-                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking1);
+                switch (SceneManager.GetActiveScene().name){
+                    case "OutsideLevelZero":
+                        if(tag == "CutsceneOne") FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.act1Scene2p1);
+                        else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act1Scene2p2);
+                        break;
+                    case "OutsideLevel1":
+                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking1);
+                        break;
+                    case "OutsideLevel2":
+                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking2);
+                        break;
+                    case "OutsideLevel3":
+                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking3);
+                        break;
+                    case "DreamLevelOne":
+                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.act2Scene5p1);
+                        break;
+                    default:
+                        FindObjectOfType<DialogueManager>().automaticDialogue(dialogue);
+                        break;
+                }
+                
             }
-            else if (SceneManager.GetActiveScene().name == "OutsideLevel2")
-            {
-                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking2);
-            }
-            else if (SceneManager.GetActiveScene().name == "OutsideLevel3")
-            {
-                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking3);
-            }
-            else if (SceneManager.GetActiveScene().name == "DreamLevelOne")
-            {
-                FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.act2Scene5p1);
-            }
-            else FindObjectOfType<DialogueManager>().automaticDialogue(dialogue);
+            Destroy(gameObject);
+            return;
         }
-
+  
     }
 }

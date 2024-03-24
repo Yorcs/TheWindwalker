@@ -8,6 +8,8 @@ TagManager:
   - Checkpoint
   - Ground
   - Water
+  - CutsceneOne
+  - CutsceneTwo
   layers:
   - Default
   - TransparentFX

@@ -9,9 +9,9 @@ public class CutsceneManager : MonoBehaviour
     {
         switch (SceneManager.GetActiveScene().name)
         {
-            case "Act1Scene2":
+            /*case "Act1Scene2":
                 FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act1Scene2);
-                break;
+                break;*/
             case "Act1Scene3":
                 FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act1Scene3);
                 break;
