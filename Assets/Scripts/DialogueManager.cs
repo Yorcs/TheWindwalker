@@ -73,12 +73,6 @@ public class DialogueManager : MonoBehaviour
         "*T You are a dream-eater. You want off with it. I couldn't possibly want this enough to agree to such a ridiculous offer. Go away.",
         "*M Tonight. I will appear to you once more. If you do not agree, then you will never see me again."
     };
-    /*public static string[] walking1 =
-    {//this section should feature a little bit of debate from Toyen whiles hes walking to the campsite
-        "*T A Makobii, it must be desperate, getting that close to a village, offering a deal...",
-        "*T It surely intends to eat whatever it thinks it can find...",
-        "*T I might be just as desperate as it is..."
-    };*/
 
     //outside level 1
     public static string[] walking1 =
@@ -98,7 +92,7 @@ public class DialogueManager : MonoBehaviour
         "*T Never mind, let’s just begin."
     };
 
-    //cutscene 2
+    //cutscene2
     public static string[] act2Scene2 =
    {
         "*M Come. Let us begin.",
@@ -158,6 +152,7 @@ public class DialogueManager : MonoBehaviour
         "*M You willed us here. Do not ask me that."
     };
 
+    //dream level one end
     public static string[] dreamLevelOneEnd =
     {
         "*T Is it one of my memories?",
@@ -169,7 +164,8 @@ public class DialogueManager : MonoBehaviour
         "*M A... small meal... in Makobii terms... but..."
     };
 
-    public static string[] act2Scene5choice1 =
+    //dream level one  + consequences
+    public static string[] dreamLevelOnePos =
     {
         "*T ...",
         "*T Makobii!",
@@ -180,7 +176,9 @@ public class DialogueManager : MonoBehaviour
         "*T Do you think I’m stupid? Maybe I am, I trusted some dream eater to not eat my dreams and leave me as a husk of the husk I already am!",
         "*M Go to that cliff face, you might find your memories there, if you don’t then jump off it!"
     };
-    public static string[] act2Scene5choice2 =
+
+    //dream level one  - consequences
+    public static string[] dreamLevelOneNeg =
     {
         "*T A small meal?! ",
         "*T You just want to eat my memory, don't you! That's all you can think about!",
@@ -195,42 +193,8 @@ public class DialogueManager : MonoBehaviour
     };
 
 
-    public static string[] act2Scene5p2 =
-    {
-        "*T We should turnback, makobii.",
-        "*M We are so close...",
-        "*T To what?",
-        "*M A fragment.",
-        "*T is it one of my memories?",
-        "*M Whose would it be but yours?",
-        "*T If I touch it what happens?",
-        "*M You will remember what ever memory it is, but I doubt its your lost memory, It's likely something else you've forgotten over the years. ",
-        "*M A... small meal... in Makobii terms... but...",
-        "*T Makobii!",
-        "*T Makobii! Answer me!"
-    };
-    public static string[] act2Scene5choice2 =
-    {
-        "*T A small meal?! ",
-        "*T You just want to eat my memory, don't you! That's all you can think about!",
-        "*T Makobii!",
-        "*T Makobii! Answer me!"
-    };
-   
-    public static string[] act2scene6choice1 =
-    {
-        "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
-        "*T Nobody would dare to venture with something like you without it. Do you think I'm stupid?",
-        "*T Maybe I am, I trusted some dream eater to not eat my dreams and leave me as a husk of the husk I already am!",
-        "*M Go to that cliff face, you might find your memories there, if you don't then jump of it!"
-    };
-    public static string[] act2scene6choice2 =
- {
-        "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
-        "*T I'm sorry, but makobii aren't exactly harmless, it was for my protection. Besides, if any of us should be angry, it should be me!",
-        "*T You tried to eat my memories! While I was being attacked by some monster you were goin to eat my memories! What could I have done instead? ",
-        "*M That cliff face, that is likely where you will find the memory."
-    };
+
+    //post draft
     public static string[] walking4 =
     {
         "*T Makobii!",
