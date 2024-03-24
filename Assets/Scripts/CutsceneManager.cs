@@ -12,7 +12,7 @@ public class CutsceneManager : MonoBehaviour
             /*case "Act1Scene2":
                 FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act1Scene2);
                 break;*/
-            case "Act1Scene3":
+            /*case "Act1Scene3":
                 FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act1Scene3);
                 break;
             case "Act1Scene4":
@@ -58,7 +58,7 @@ public class CutsceneManager : MonoBehaviour
             case "Act3Scene4":
                 if (ChoiceManager.goodKarma) FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act3scene4endinggood);
                 else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act3scene4endingbad);
-                break;
+                break;*/
         }
     }
 }

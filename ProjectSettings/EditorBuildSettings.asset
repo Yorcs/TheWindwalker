@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DreamTutorial.unity
-    guid: 61c67e8aae1b84da0af21ec6443dd7ec
+    path: Assets/Scenes/MainMenu.unity
+    guid: ec731a087fed08b45a8bf063e33ac757
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act1Scene2.unity
-    guid: 1cb6203c11561ff49a48e54b98fdc3f1
+    path: Assets/Scenes/DreamTutorial.unity
+    guid: 514dea96c24ab094fabe2bef88b9cb34
+  - enabled: 1
+    path: Assets/Scenes/OutsideLevelZero.unity
+    guid: 1458fc36d11a8924a83170b723957404
   - enabled: 1
     path: Assets/Scenes/Cutscenes/Act1Scene3.unity
     guid: 3225cc34e985e4a4abcef1e2a0bf8d07
@@ -18,58 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/OutsideLevel1.unity
     guid: c3fbebdf9aacad344ac037b105c6de4b
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act1Scene4.unity
-    guid: 88048755be93a1143b47796cc717cd35
-  - enabled: 1
-    path: Assets/Scenes/OutsideLevel2.unity
-    path: Assets/Scenes/TestCutsceneLevel.unity
-    guid: d570ef4da0cbe6c4ba7c12b0bd117c02
-  - enabled: 1
-    path: Assets/Scenes/DreamLevelOne.unity
-    guid: c41fa119528762245a449f4cec9fcc61
-  - enabled: 1
-    path: Assets/Scenes/DreamLevelTwo.unity
-    guid: d12a83099edcf6843a8b772fd5d81dc4
-  - enabled: 1
-    path: Assets/Scenes/DreamLevelThree.unity
-    guid: 4e417e63ded6aa04eb51cbcf17f83b7a
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act2Scene1.unity
-    guid: a8dcc64cd995a8b4fbe2b7d207d9023d
-  - enabled: 1
     path: Assets/Scenes/Cutscenes/Act2Scene2.unity
     guid: 38970757b5e834c48999ffd65c5ef7ab
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act2Scene3.unity
-    guid: cdac773128f02a94f8948021c94dd4eb
+    path: Assets/Scenes/OutsideLevel2.unity
+    guid: 5b4aacb10779608498e1b3a7bdc9b956
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act2Scene4.unity
-    guid: 747a40851cc86a543bbe7a0d78c2446a
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act2Scene5P1.unity
-    guid: 39a95490a50139846b8b2ddc3277c3f7
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act2Scene5P2.unity
-    guid: 280cbe5a6573d9b42828bc90275fb203
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act2Scene8.unity
-    guid: cb1432023aab32e4496c3c7c4e470cef
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act2Scene9.unity
-    guid: fb4890ea767837e4dafb5a30966c97c4
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act3Scene1.unity
-    guid: 34ac9ae2c8cbc004094a56a21464f50d
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act3Scene2P1.unity
-    guid: 94fbde8e9e36c6e4fac7087e2072cbe2
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act3Scene2P2.unity
-    guid: c36d689a197bdc945a4a360f7906eedb
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act3Scene3.unity
-    guid: 66f34d1fd5feed64581988e67954ce35
-  - enabled: 1
-    path: Assets/Scenes/Cutscenes/Act3Scene4.unity
-    guid: dabe3b99589b982429427c19f37dd703
+    path: Assets/Scenes/DreamLevelOne.unity
+    guid: c41fa119528762245a449f4cec9fcc61
   m_configObjects: {}
