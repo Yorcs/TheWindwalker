@@ -130,7 +130,27 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2562034003841842293, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7068208772612129492}
+    - targetCorrespondingSourceObject: {fileID: -3602927797655225239, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7940545996138746926}
   m_SourcePrefab: {fileID: 100100000, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
+--- !u!1 &504110257869845115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3602927797655225239, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
+  m_PrefabInstance: {fileID: 5404638248454016530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!122 &7940545996138746926
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504110257869845115}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4282137658
+  m_Size: 1.4
 --- !u!1 &5170211588574704451 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 04df4c071e8baa840ad0866aaad7a0bb, type: 3}
@@ -169,7 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caca5ce23d56ac848a015453a2ce03d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
   makAnimator: {fileID: 7607835058533312657}
   moveSpeed: 1.89
   accelRate: 0.6
