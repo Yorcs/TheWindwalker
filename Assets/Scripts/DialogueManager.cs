@@ -172,9 +172,10 @@ public class DialogueManager : MonoBehaviour
         "*T Makobii! Answer me!",
         "*T ...",
         "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
-        "*T Nobody would dare to venture with something like you without it.",
-        "*T Do you think I’m stupid? Maybe I am, I trusted some dream eater to not eat my dreams and leave me as a husk of the husk I already am!",
-        "*M Go to that cliff face, you might find your memories there, if you don’t then jump off it!"
+        "*T I’m sorry, but makobii aren't exactly harmless, it was for my protection.",
+        "*T Besides, if any of us should be angry, it should be me! You tried to eat my memories!",
+        "*T While I was being attacked by some monster you were goin to eat my memories! What could I have done instead?",
+        "*M That cliff face, that is likely where you will find the memory."
     };
 
     //dream level one  - consequences
@@ -186,10 +187,9 @@ public class DialogueManager : MonoBehaviour
         "*T Makobii! Answer me!",
         "*T ...",
         "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
-        "*T I’m sorry, but makobii aren't exactly harmless, it was for my protection.",
-        "*T Besides, if any of us should be angry, it should be me! You tried to eat my memories!",
-        "*T While I was being attacked by some monster you were goin to eat my memories! What could I have done instead?",
-        "*M That cliff face, that is likely where you will find the memory."
+        "*T Nobody would dare to venture with something like you without it.",
+        "*T Do you think I’m stupid? Maybe I am, I trusted some dream eater to not eat my dreams and leave me as a husk of the husk I already am!",
+        "*M Go to that cliff face, you might find your memories there, if you don’t then jump off it!"
     };
 
 
