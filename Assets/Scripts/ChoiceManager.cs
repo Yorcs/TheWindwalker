@@ -37,6 +37,10 @@ public class ChoiceManager: MonoBehaviour
                 pos.text = a2s2Pos;
                 neg.text = a2s2Neg;
                 break;
+            case "DreamLevelOneEnd":
+                pos.text = a2s5Pos;
+                neg.text = a2s5Neg;
+                break;
         }
     }
 
