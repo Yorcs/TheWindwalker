@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
                 transform.position = startPos;
                 transform.rotation = startRot;
                 health = 100;
-                if (GameObject.Find("DangerArea")) GameObject.Find("DangerArea").GetComponent<MovingDangerArea>().resetPos();
+                //if (GameObject.Find("DangerArea")) GameObject.Find("DangerArea").GetComponent<MovingDangerArea>().resetPos();
                 return;
             }
         }
@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
             transform.position = startPos;
             transform.rotation = startRot;
             health = 100;
-            if (GameObject.Find("DangerArea")) GameObject.Find("DangerArea").GetComponent<MovingDangerArea>().resetPos();
+            //if (GameObject.Find("DangerArea")) GameObject.Find("DangerArea").GetComponent<MovingDangerArea>().resetPos();
 
             return;
         }

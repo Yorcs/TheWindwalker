@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class ChoiceManager: MonoBehaviour
 {
     public static bool scene2 = false;
-    public static bool scene5 = false;
+    public static bool level1 = false;
     public static bool scene6 = false;
+
+    public static bool scene2Done = false;
+    public static bool level1Done = false;
 
     public static bool goodKarma = false;
 
@@ -24,7 +27,7 @@ public class ChoiceManager: MonoBehaviour
     public Text pos;
     public Text neg;
 
-    public static int shardsFound = 2;
+    public static int shardsFound = 0;
 
     private void Awake()
     {
@@ -42,10 +45,18 @@ public class ChoiceManager: MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "Act2Scene2":
+                scene2Done = true;
                 scene2 = choice;
                 Debug.Log(scene2);
                 if(choice) FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act2Scene2choice1);
                 else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act2Scene2choice2);
+                break;
+            case "DreamLevelOneEnd":
+                level1Done = true;
+                level1 = choice;
+                Debug.Log(level1);
+                if (choice) FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.dreamLevelOnePos);
+                else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.dreamLevelOneNeg);
                 break;
         }
 

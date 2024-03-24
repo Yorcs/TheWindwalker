@@ -473,12 +473,18 @@ public class DialogueManager : MonoBehaviour
                 SceneManager.LoadScene("OutsideLevel1");
                 break;
         }*/
-        if (SceneManager.GetActiveScene().name == "Act2Scene2")
+        if ((SceneManager.GetActiveScene().name == "Act2Scene2" && !ChoiceManager.scene2Done) ||
+            (SceneManager.GetActiveScene().name == "DreamLevelOneEnd" && !ChoiceManager.level1Done))     
         {
             FindObjectOfType<ChoiceManager>().GetComponent<CanvasGroup>().alpha = 1;
             FindObjectOfType<ChoiceManager>().GetComponent<CanvasGroup>().interactable = true;
         }
-        if (SceneManager.GetActiveScene().name == "Act1Scene2" || SceneManager.GetActiveScene().name == "Act1Scene3") FindObjectOfType<FadeTransition>().startFade();
+        if (SceneManager.GetActiveScene().name == "Act1Scene3" ||
+            (SceneManager.GetActiveScene().name == "Act2Scene2" && ChoiceManager.scene2Done) ||
+            (SceneManager.GetActiveScene().name == "DreamLevelOneEnd" && ChoiceManager.level1Done))
+        {
+            FindObjectOfType<FadeTransition>().startFade();
+        }
     }
 
     //automaticaly load out dialogue
