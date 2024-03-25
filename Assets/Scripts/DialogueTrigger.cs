@@ -42,7 +42,7 @@ public class DialogueTrigger : MonoBehaviour
                         //FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking3);
                         break;
                     case "DreamLevelOne":
-                        //FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.act2Scene5p1);
+                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.dreamLevelOneIntro);
                         break;
                     default:
                         FindObjectOfType<DialogueManager>().automaticDialogue(dialogue);
