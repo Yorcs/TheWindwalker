@@ -81,10 +81,10 @@ public class DialogueManager : MonoBehaviour
         "*M Hello, Toyen. Have you made your decision?",
         "*T I have. I will journey with you.",
         "*M I see.",
-        "*M Then, let's begin. Since your energy is dim we Will have to head to a point where the connection between realms is stronger.",
+        "*M Then, let's begin. Since your energy is dim we will have to head to a point where the connection between realms is stronger.",
         "*T Dim? What is that supposed to mean?",
         "*M It means you're quite boring.",
-        "*T Does your kindnot have manners?",
+        "*T Does your kind not have manners?",
         "*M I have learned them from humans. Thank you.",
         "*T What are we even looking for once we are in there?",
         "*M We will find out once we’re there.",
@@ -169,10 +169,8 @@ public class DialogueManager : MonoBehaviour
     //dream level one  + consequences
     public static string[] dreamLevelOnePos =
     {
-        "*T ...",
         "*T Makobii!",
         "*T Makobii! Answer me!",
-        "*T ...",
         "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
         "*T I’m sorry, but makobii aren't exactly harmless, it was for my protection.",
         "*T Besides, if any of us should be angry, it should be me! You tried to eat my memories!",
@@ -411,6 +409,7 @@ public class DialogueManager : MonoBehaviour
             imageCounter++;
             //Debug.Log("/ UIAssets / Cutscenes / A1S3 / a1s3_" + imageCounter + ".png");
             Sprite temp;
+            Debug.Log(imageCounter);
 
             if (GameObject.Find("CutsceneImage"))
             {
@@ -437,6 +436,38 @@ public class DialogueManager : MonoBehaviour
                                 else temp = Resources.Load<Sprite>("Sprites/A2S2/a2s2c2_" + imageCounter);
                                 GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
                             }
+                        }
+                        break;
+                    case "DreamLevelOneEnd":
+                        if (imageCounter < dreamLevelOneEnd.Length && !ChoiceManager.level1Done)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/Level1End/a2s3_" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        else
+                        {
+                            Debug.Log("here 1");
+                            if (imageCounter < dreamLevelOneEnd.Length + dreamLevelOnePos.Length && ChoiceManager.level1Done && ChoiceManager.level1)
+                            {
+                                Debug.Log("here 2");
+                                if (ChoiceManager.level1)
+                                {
+                                    Debug.Log("here 3");
+                                    temp = Resources.Load<Sprite>("Sprites/Level1End/a2s3c1_" + imageCounter);
+                                    GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                                }
+                            }
+                            else if (imageCounter < dreamLevelOneEnd.Length + dreamLevelOneNeg.Length && ChoiceManager.level1Done && !ChoiceManager.level1)
+                            {
+                                Debug.Log("here 2");
+                                if (!ChoiceManager.level1)
+                                {
+                                    Debug.Log("here 3");
+                                    temp = Resources.Load<Sprite>("Sprites/Level1End/a2s3c2_" + imageCounter);
+                                    GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                                }
+                            }
+                            
                         }
                         break;
 
