@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
 
 //manages the display of cutscene dialogue
 //https://www.youtube.com/watch?v=_nRzoTzeyxU&t=6s
@@ -69,7 +70,7 @@ public class DialogueManager : MonoBehaviour
         "*M Toyen. The man who moves with the wind. I have discovered something while walking your dreams. A memory buried so deeply in your soul that it is forever inaccessible.",
         "*T What? How do you--",
         "*M A Forgotten memory. Everything since you were a child -- gone from this world. Such memories are a rarity, but you, you carry one. And its burden, as it seems.",
-        "*M I can helpyou discover it.",
+        "*M I can help you discover it.",
         "*T You are a dream-eater. You want off with it. I couldn't possibly want this enough to agree to such a ridiculous offer. Go away.",
         "*M Tonight. I will appear to you once more. If you do not agree, then you will never see me again."
     };
@@ -80,10 +81,10 @@ public class DialogueManager : MonoBehaviour
         "*M Hello, Toyen. Have you made your decision?",
         "*T I have. I will journey with you.",
         "*M I see.",
-        "*M Then, let's begin. Since your energy is dim we Will have to head to a point where the connection between realms is stronger.",
+        "*M Then, let's begin. Since your energy is dim we will have to head to a point where the connection between realms is stronger.",
         "*T Dim? What is that supposed to mean?",
         "*M It means you're quite boring.",
-        "*T Does your kindnot have manners?",
+        "*T Does your kind not have manners?",
         "*M I have learned them from humans. Thank you.",
         "*T What are we even looking for once we are in there?",
         "*M We will find out once we’re there.",
@@ -123,6 +124,7 @@ public class DialogueManager : MonoBehaviour
     //cutscene 2 - consequences
     public static string[] act2Scene2choice2 =
     {
+        "*T I can't do it.",
         "*M You decline their advances. All of them. All the time. Why?",
         "*T It is for their own good. There is no point of connection if I am to leave again.",
         "*M Not even in a dream can you allow yourself to experience these connections and stability that you speak of.",
@@ -167,10 +169,8 @@ public class DialogueManager : MonoBehaviour
     //dream level one  + consequences
     public static string[] dreamLevelOnePos =
     {
-        "*T ...",
         "*T Makobii!",
         "*T Makobii! Answer me!",
-        "*T ...",
         "*M You have had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
         "*T I’m sorry, but makobii aren't exactly harmless, it was for my protection.",
         "*T Besides, if any of us should be angry, it should be me! You tried to eat my memories!",
@@ -325,6 +325,7 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvas.SetActive(true);
         dialogueCanvas.GetComponent<CanvasGroup>().alpha = 1;
         dialogueCanvas.GetComponent<CanvasGroup>().interactable = true;
+        dialogueCanvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
         sentences.Clear();
 
         if (GameObject.Find("Name")) GameObject.Find("Name").GetComponent<Text>().text = dialogue.name;
@@ -350,6 +351,7 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvas.SetActive(true);
         dialogueCanvas.GetComponent<CanvasGroup>().alpha = 1;
         dialogueCanvas.GetComponent<CanvasGroup>().interactable = true;
+        dialogueCanvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
         sentences.Clear();
 
         foreach (string sentence in dialogue)
@@ -405,9 +407,73 @@ public class DialogueManager : MonoBehaviour
             }
 
             imageCounter++;
-            Debug.Log("/ UIAssets / Cutscenes / A1S3 / a1s3_" + imageCounter + ".png");
-            Sprite temp = Resources.Load<Sprite>("Sprites/A1S3/a1s3_" + imageCounter);
-            if (GameObject.Find("CutsceneImage") && imageCounter < act1Scene3.Length) GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+            //Debug.Log("/ UIAssets / Cutscenes / A1S3 / a1s3_" + imageCounter + ".png");
+            Sprite temp;
+            Debug.Log(imageCounter);
+
+            if (GameObject.Find("CutsceneImage"))
+            {
+                switch (SceneManager.GetActiveScene().name)
+                {
+                    case "Act1Scene3":
+                        if (imageCounter < act1Scene3.Length)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/A1S3/a1s3_" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        break;
+                    case "Act2Scene2":
+                        if (imageCounter < act2Scene2.Length && !ChoiceManager.scene2Done)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/A2S2/a2s2_" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        else
+                        {
+                            if (imageCounter < act2Scene2.Length + act2Scene2choice1.Length && ChoiceManager.scene2Done)
+                            {
+                                if(ChoiceManager.scene2) temp = Resources.Load<Sprite>("Sprites/A2S2/a2s2c1_" + imageCounter);
+                                else temp = Resources.Load<Sprite>("Sprites/A2S2/a2s2c2_" + imageCounter);
+                                GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                            }
+                        }
+                        break;
+                    case "DreamLevelOneEnd":
+                        if (imageCounter < dreamLevelOneEnd.Length && !ChoiceManager.level1Done)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/Level1End/a2s3_" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        else
+                        {
+                            Debug.Log("here 1");
+                            if (imageCounter < dreamLevelOneEnd.Length + dreamLevelOnePos.Length && ChoiceManager.level1Done && ChoiceManager.level1)
+                            {
+                                Debug.Log("here 2");
+                                if (ChoiceManager.level1)
+                                {
+                                    Debug.Log("here 3");
+                                    temp = Resources.Load<Sprite>("Sprites/Level1End/a2s3c1_" + imageCounter);
+                                    GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                                }
+                            }
+                            else if (imageCounter < dreamLevelOneEnd.Length + dreamLevelOneNeg.Length && ChoiceManager.level1Done && !ChoiceManager.level1)
+                            {
+                                Debug.Log("here 2");
+                                if (!ChoiceManager.level1)
+                                {
+                                    Debug.Log("here 3");
+                                    temp = Resources.Load<Sprite>("Sprites/Level1End/a2s3c2_" + imageCounter);
+                                    GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                                }
+                            }
+                            
+                        }
+                        break;
+
+                }
+            }
+
 
             string sentence = sentences.Dequeue();
             switch (sentence.Substring(0, 2))
@@ -464,6 +530,7 @@ public class DialogueManager : MonoBehaviour
         //dialogueCanvas.SetActive(false);
         dialogueCanvas.GetComponent<CanvasGroup>().alpha = 0;
         dialogueCanvas.GetComponent<CanvasGroup>().interactable = false;
+        dialogueCanvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
         /*switch (SceneManager.GetActiveScene().name)
         {
             case "Act1Scene2":

@@ -46,6 +46,7 @@ public class ChoiceManager: MonoBehaviour
 
     public void selected(bool choice)
     {
+        gameObject.GetComponent<CanvasGroup>().alpha = 0;
         switch (SceneManager.GetActiveScene().name)
         {
             case "Act2Scene2":
