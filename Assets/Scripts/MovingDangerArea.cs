@@ -44,12 +44,12 @@ public class MovingDangerArea: MonoBehaviour
             {
                 if (transform.position.y < maxPos && !reverseDirection)
                 {
-                    transform.position += speed;
+                    transform.position += speed * Time.deltaTime;
                 }
                 else if (transform.position.y > minPos)
                 {
                     reverseDirection = true;
-                    transform.position -= speed;
+                    transform.position -= speed * Time.deltaTime;
                 }
                 else
                 {
@@ -59,12 +59,12 @@ public class MovingDangerArea: MonoBehaviour
             {
                 if (transform.position.z < maxPos && !reverseDirection)
                 {
-                    transform.position += speed;
+                    transform.position += speed * Time.deltaTime;
                 }
                 else if (transform.position.z > minPos)
                 {
                     reverseDirection = true;
-                    transform.position -= speed;
+                    transform.position -= speed * Time.deltaTime;
                 }
                 else
                 {
