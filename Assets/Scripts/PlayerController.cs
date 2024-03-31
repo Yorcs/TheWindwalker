@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //controls the player
 //https://www.youtube.com/watch?v=a-rogIWEJlY
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 startPos;
     public Quaternion startRot;
     public bool onGround;
+    public int groundDrag;
 
     //variables for health
     private float health = 100;
@@ -33,7 +35,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float groundCheckDistance = 1f;
 
-
+    public Transform orientation;
+    Rigidbody rb;
+    public Vector3 moveDirection;
 
 
     private void Start()
@@ -42,6 +46,8 @@ public class PlayerController : MonoBehaviour
         startPos = transform.position;
         startRot = transform.rotation;
         if (GameObject.Find("ShardsFound")) GameObject.Find("ShardsFound").GetComponent<Text>().text = ChoiceManager.shardsFound + "/3";
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
     }
 
     private void Update()
@@ -51,6 +57,10 @@ public class PlayerController : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
 
+            moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+            rb.AddForce(moveDirection.normalized * speed * 5f, ForceMode.Force);
+            SpeedControl();
+                
             if (verticalInput != 0 ||horizontalInput!=0) //turns moving animations on if vertical input is detected
             {
                 playerAnimator.SetBool("Moving", true);
@@ -73,25 +83,30 @@ public class PlayerController : MonoBehaviour
 
             //new movement stuff start
 
-            Quaternion dir = Quaternion.LookRotation((Vector3.forward * verticalInput) + (Vector3.right * horizontalInput));
+            /*Quaternion dir = Quaternion.LookRotation((Vector3.forward * verticalInput) + (Vector3.right * horizontalInput));
             Vector3 tempVec = new Vector3(horizontalInput, 0f, verticalInput);
 
             if (tempVec.magnitude > 0)
             {
                 transform.rotation = dir;
                 transform.Translate(Vector3.forward  *tempVec.magnitude * Time.deltaTime * speed);
-            }
-            
-            
+            }*/
+
+
             //new movement stuff end
 
+            if (isOnGround)
+            {
+                rb.drag = groundDrag;
+            }
+            else rb.drag = 0;
 
 
             //if space is pressed, jump
             if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
             {
                 playerAnimator.SetTrigger("Jump");
-                GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                GetComponent<Rigidbody>().AddForce(transform.up * jumpForce * 1.5f, ForceMode.Impulse);
 
                 playerAnimator.SetBool("Grounded", false);
 
@@ -164,6 +179,12 @@ public class PlayerController : MonoBehaviour
             loseHealth = true;
             regenHealth = false;
             delayCounter = 0;
+
+            if (SceneManager.GetActiveScene().name == "DreamLevelThreeNew")
+            {
+                health = 0;
+                FindAnyObjectByType<Path>().backToStart();
+            }       
         }else if(other.tag == "Checkpoint") //if player collides with a checkpoint, set that as the new starting pos/rot
         {
             startPos = other.transform.position;
@@ -236,5 +257,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //referenced from https://www.youtube.com/watch?v=f473C43s8nE
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        if(flatVel.magnitude > speed)
+        {
+            Vector3 limitedVel = flatVel.normalized * speed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+    }
 
     }
