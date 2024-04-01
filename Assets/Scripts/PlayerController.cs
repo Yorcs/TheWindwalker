@@ -97,6 +97,9 @@ public class PlayerController : MonoBehaviour
 
             if (isOnGround)
             {
+                if(SceneManager.GetActiveScene().name == "DreamLevelThreeNew")
+                rb.drag = 7;
+                else
                 rb.drag = groundDrag;
             }
             else rb.drag = 0;
@@ -117,14 +120,28 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 playerAnimator.SetBool("Running", true);
-                speed = 8;
+                if (SceneManager.GetActiveScene().name == "DreamLevelThreeNew")
+                {
+                    speed = 12;
+                }
+                else
+                {
+                    speed = 8;
+                }
             }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 playerAnimator.SetBool("Running", false);
-                speed = 5;
-                
+                if (SceneManager.GetActiveScene().name == "DreamLevelThreeNew")
+                {
+                    speed = 10;
+                }
+                else
+                {
+                    speed = 5;
+                }
+
             }
         }
 
