@@ -6,6 +6,18 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using UnityEditor.Experimental.GraphView;
+using Cinemachine.Utility;
+using static Cinemachine.CinemachineFreeLook;
+using static Cinemachine.DocumentationSortingAttribute;
+using static UnityEngine.InputManagerEntry;
+using static UnityEngine.Rendering.DebugUI.Table;
+using static UnityEngine.Rendering.DebugUI;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
+using System.Security.Cryptography;
+using System.Threading;
+using System;
+using Unity.Burst.CompilerServices;
+using UnityEditor;
 
 //manages the display of cutscene dialogue
 //https://www.youtube.com/watch?v=_nRzoTzeyxU&t=6s
@@ -319,6 +331,143 @@ public class DialogueManager : MonoBehaviour
         "*T I can remember where they were.",
         "*T I'm so close..."
     };
+
+    //NEW AS OF 4/2
+    public static string[] introCut =
+    {
+        "*T The last five have been empty, even though this area should provide a closer connection...," +
+        "*T But I’m getting closer, my family is so close I can feel it...",
+        "*T ...",
+        "*T Finally another Fragment...",
+        "*T ..."
+    };
+
+    public static string[] tutorialIntro =
+    {
+        "*T There must be a fragment of my memories here...",
+        "*T ...but this looks just as empty as the last.",
+        "*T Maybe if I go deeper into the dream..."
+    };
+
+    public static string[] tutorialEnd =
+    {
+        "*T You! Show yourself!",
+        "*T ...",
+        "*T Well, time to get into town.",
+        "*T ...",
+        "*L Why would you want to go sleep in the fields outside the village?!",
+        "*L You know what will come out to get you! I know you think you're safe because of the totems, but I remember a time before that safety."
+    };
+
+    public static string[] shopkeeperScene =
+    {
+        "*S Toyen! Long time, no see. The nomad, ever-roaming, searching for his long lost family! Any closer?",
+        "*T Maybe, I have a feeling, more than usual, that I’m going to find something soon.",
+        "*S But, no return of any memories?",
+        "*T No. Not yet. But, do you mind if I take a little loan?",
+        "*S Hmm... You haven't paid me back yet for the last one.",
+        "*T I know, there just haven't been many people needing deliveries that I can do while in the area.",
+        "*S You know, if you’re wanting to pay me back, why not stay here a while, you can get a job in the fields, I have a spare room upstairs, you can stay there.",
+        "*T You know I can’t, I’m close this time.",
+        "*S Uh huh...",
+        "*T I mean it, this isn’t like before, in my gut, I know something is going to happen soon.",
+        "*S Toyen, you may never find them, you know. It may be time to move on.",
+        "*T Only I will decide when that is.",
+        "*S All right. I’ll give you a loan. Whether or not you pay me back.",
+        "*S It’ll last you a week, but I got one little gift for you.",
+        "*S You look exhausted. Use this to rest when you really need it.",
+        "*T ..."
+    };
+
+    public static string[] makobiiIntro =
+    {
+        "*T What? A Makobii!\nWhy do you show yourself here?\nThis is not a dream",
+        "*M Toyen, dream scouring.\nWalking on wind, finds nothing.\nBut Makobii could",
+        "*T Speak sense, creature. I know what you are.",
+        "*M (Laughs)",
+        "*M We were not speaking in Haiku? Or did you grow tired of it, it’s not your mission after all.",
+        "*T What? How do you--",
+        "*M A Forgotten memory... How rare...",
+        "*M Everything since you were a child… Gone from this world.",
+        "*M None are as skilled as I, when it comes to dreaming I'll help you find it",
+        "*T You are a dream-eater. You want off with it. I couldn’t possibly want this enough to agree to such a ridiculous offer.",
+        "*T Besides, I’m close, I don’t need your help.",
+        "*M Close! He says... (Laughs)",
+        "*M Are you certain you are close to the memory, or maybe you were close to someone who could help.",
+        "*M There is little use lying to a spirit...",
+        "*M I know from your dream last night how long you’ve journeyed for this sole purpose.",
+        "*T So it was you that was following me last night!",
+        "*M Hehe, you noticed huh? Don’t worry, I was just checking to see if you were what I thought you were.",
+        "*M So, are you sure you’re not desperate enough?",
+        "*T Fine. I’ll work with you, but don’t think you can trick me, I’ll be watching...",
+        "*M Heheh, I wouldn’t dream of it."
+    };
+
+    public static string[] walkingOne =
+    {
+        "*T So, what happens if the next fragment is empty like the last couple have been?",
+        "*M It’s hard to say, half the problem is you, you don’t have spiritual energy...,",
+        "*T Oh? How so?",
+        "*M Well, humans tend to have very rich lives, it gives them lots to dream about. Not so much for you...",
+        "*T What? I don’t lead a boring life! I go on these journeys, I face challenges and overcome them! I should have plenty to dream about.",
+        "*M Hmm... maybe the only thing is you didn’t care about them, so your soul didn’t hold on to them. Say, do you come across the same challenges often?",
+        "*T Well, maybe… I get stuck on a lot of the same terrain... But that's because they're challenging for humans!",
+        "*M Or maybe you never adapted to them… maybe you’re stuck on them. No matter, I think we are close to a fragment."
+    };
+
+    public static string[] dreamOne =
+    {
+        "*M See, you went to the village, so now you dream of it. Dreams act as a way for us to understand oneself.",
+        "*T So do I get these empty dreamscapes because I already understand myself?",
+        "*M HA! No... more that you can’t begin to understand yourself, you face no inner conflict when you are out in the wild pursuing your goal, but when you ask for another loan from the shopkeeper, you feel shame.",
+        "*T But I need supplies to continue on my journey, I’ll pay him back later, when I’m not so close.",
+        "*M When you finally find your family, will you really go back and pay him? Will you even be able too?",
+        "*T Whatever, let’s keep going, we need to go deeper into the dream.",
+        "*M Deeper? This is it, Toyen. It’s like I said, This is what you are dreaming of.",
+        "*M People, passing by, not paying attention to you.",
+        "*M I feel a sort of empathy for you at this moment, it is similar to how Makobii are ignored now.",
+        "*M I used to get many meals, there would be cults that praised us, others would steer clear of us and make deals where we only ate a little before moving on.",
+        "*M But humans and their talismans and Totems. The spiritual energy in them keeps us away. We are just another creature that has been conquered.",
+        "*M But at least it’s not my fault that I’m an outcast.",
+        "*T It’s not my fault either! If I could find my family I would be part of a community!",
+        "*M Then why don’t you join one?",
+        "*T If I’m just going to leave again, what’s the point?",
+        "*M How masochistic humans can be...",
+        "*T Never mind, let’s go."
+    };
+
+    public static string[] walkingTwo =
+    {
+        "*M If this keeps going, we may never find anything, even with my help.",
+        "*T You haven't exactly made it clear how you will help, how will we find this forgotten memory if my life is so boring?",
+        "*M I’m not sure, even the most boring prey–",
+        "*T Pardon?",
+        "*M Sorry, old habit, even the most boring humans tend to have some memories scattered around their dreams that lead deeper into the subconscious...",
+        "*M ...but we can’t get to that level if you don’t scrape the surface of your mind.",
+        "*T Deeper level of the subconscious, would a drug help?",
+        "*M Well, perhaps, but it would take a long time for us to be able to make a sleeping agent out here in the forest...",
+        "*T I have some.",
+        "*M Well why didn’t you use that earlier?",
+        "*T I didn’t think about it.",
+        "*M Bah, anyways, we’re close to one now..."
+    };
+
+    public static string[] dreamTwo =
+    {
+        "*T I’ve never seen a place like this, what is it?",
+        "*M How would I know? It’s your dream.",
+        "*M But it is interesting that the deeper level of your subconscious looks like this...",
+        "*T Well? Where too, guide?",
+        "*M There seems to be really only one direction, you need my guidance on where to go?",
+        "*T I guess not. After the first challenge in the area.",
+        "*T What? Is something following us?", //activate bird caw sound effect here
+        "*M There shouldn’t be...",
+        "*M But if we have entered a deeper level of your subconscious, we may be exerting more spiritual energy...",
+        "*T So another Makobii is after us?",
+        "*M Maybe, but it likely isn’t as put together as me...",
+        "*M ...so many Makobii are starving now, it may be on a rampage. Do not try to reason with it."
+    };
+
     //give a dialogue object to show
     public void StartDialogue(Dialogue dialogue)
     {
