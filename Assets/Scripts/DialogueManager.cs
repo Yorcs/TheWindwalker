@@ -468,6 +468,108 @@ public class DialogueManager : MonoBehaviour
         "*M ...so many Makobii are starving now, it may be on a rampage. Do not try to reason with it."
     };
 
+    public static string[] dreamTwoEnd =
+    {
+        "*T It’s one of my memories?",
+        "*M Who else but you?",
+        "*T If I touch it what happens?",
+        "*M You will remember whatever memory it is, but I doubt it's your lost memory...",
+        "*M It's likely something else you’ve forgotten over the years.A...small meal... in Makobii terms... but...",
+        "*T A small meal?!",
+        "*T ...",
+        "*M A talisman!",
+        "*T You just want to eat my memory don’t you! That’s all you can think about!",
+        "*M Aghh!",
+        "*T ...",
+        "*T Makobii!",
+        "*T  Makobii! Answer me!",
+        "*M ...",
+        "*M You’ve had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
+        "*T Do you think I’m stupid enough to agree to this insane gambit if I didn’t have a way to stop you from taking it?",
+        "*T Besides I was right to, you were just looking for your next meal!",
+        "*M So what! I was trying to eat the forgotten memory, at the very least it would have sustained me for a lifetime!",
+        "*M It’s better than what you would do with it! Find some people who have fallen right off the map!",
+        "*T Don’t you dare! They're out there! They're waiting for me!",
+        "*M You’re waiting for them! And if you want to wait longer, go to that cliff!",
+        "*M There is a fragment there that leads to the forgotten memory.And if you don’t find it, jump off!",
+        "*T ..."
+    };
+
+    public static string[] dreamThree =
+    {
+        "*T Makobii?",
+        "*T Makobii, are you there?", //toyen touches the memory shard
+        "*T Makobii? Is that you?",  //in dreamscape
+        "*T ...", 
+        "*M I can’t hold them for long! Get your memory!",
+        "*T But they’ll kill you!",
+        "*M The age of Makobii is over, go Toyen, if this memory will bring you peace, then it’s worth a hundred of my deaths.",
+        "*T Thank you, I won’t forget this."
+    };
+
+    public static string[] dreamThreeEnd =
+    {
+        "*T NO! I was so close!",
+        "*M ...",
+        "*T Makobii! What’s happening?",
+        "*M Ah, it’s a small wound, nothing to worry about...",
+        "*T Don’t try to trick me now...",
+        "*M Heheh, hmm...",
+        "*M I’m going to die Toyen, but, I think–",
+        "*M –I have just enough strength to send you back in.",
+        "*M But I will lose control of my body, you will have to fend for yourself.",
+        "*T Why, why do you care now?",
+        "*M I think, maybe, I always did.",
+        "*M I’ve lived longer than you could count in all your remaining years...",
+        "*M I’ve eaten so many dreams, and those memories, maybe slowly, made me care for humans.",
+        "*T Is there anything I can do to help?",
+        "*M Just get the memory, I’ll be at peace then...",
+        "*M ...Knowing I helped you uncover your past and define yourself.",
+        "*T I... don’t think that the memory will help anymore...",
+        "*M What?",
+        "*T I was so obsessed with the idea of a family that I pushed anyone who could’ve loved me away...",
+        "*T I unleashed hell upon my only companion with the talisman. I don’t think it will mend my soul.",
+        "*T Let’s get this memory, not because it matters, but because we came here to do so.",
+        "*T We will win, the age of the Makobii might be over, humans may have conquered the dream eaters, but you said it yourself,",
+        "*T ‘None are as skilled as I, when it comes to dreaming’",
+        "*T Now let’s go find it.",
+        "*T ..." //toyen touches mask
+    };
+
+    public static string[] dreamFourEnd =
+    {
+        "*T ...",
+        "*T I don’t need it, I never did.",
+        "*M ...",
+        "*M ...", //makobii transforms
+        "*M Why... why would you do such a thing? You had it, it was right in front of–",
+        "*T I tricked you!",
+        "*M Huh?",
+        "*T I have defined myself, I know who I am.My actions defined me, not the memory I was searching for.",
+        "*T When I would beg and borrow, when I would spend weeks out in the wild and when I pulled a talisman on you, those actions hurt people, they hurt you.",
+        "*T I have defined myself as a man who doesn’t care about anyone, who searches for something that will never have made my life complete.",
+        "*T But today that's going to change.",
+        "*M Heheh, I hope so.",
+        "*T That’s besides the point, how are you feeling?",
+        "*M Better than I have in a long time. I think I won't have to eat for a thousand years.",
+        "*M ...", //makobii gives beads
+        "*M A gift, to remember me by.",
+        "*T What, no more adventures?",
+        "*M We both know this is where we say farewell.",
+        "*T Hmm. You’re right, I have debts to repay after all."
+    };
+
+    public static string[] finalScene =
+    {
+        "*S Toyen! So were you close?",
+        "*T I was, but I gave up.",
+        "*T ...",
+        "*T I made a friend on the road, and they taught me a lesson about myself.",
+        "*S Oh? Are you going to be traveling with them then?",
+        "*T They have their own life to get to, and they helped me realize, I do too.",
+        "*T I was thinking that I may stay for a while. Is that room you spoke of still available?"
+    };
+
     //give a dialogue object to show
     public void StartDialogue(Dialogue dialogue)
     {
