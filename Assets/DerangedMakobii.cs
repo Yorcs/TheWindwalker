@@ -14,10 +14,18 @@ public class DerangedMakobii : MonoBehaviour
     float lightMaxIntensity;
     public float lightChangeTime;
 
+    DerangedMakHandler handler;
+
     public float attackMoveSpeed;
+
+    bool attacked = false;
+
+    Vector3 initialPos;
     // Start is called before the first frame update
     void Start()
     {
+        initialPos = transform.position;
+        handler = FindAnyObjectByType<DerangedMakHandler>();
         lightMaxIntensity = indicatorLight.intensity;
         animator = GetComponent<Animator>();
         resetLight();
@@ -26,7 +34,7 @@ public class DerangedMakobii : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (attacked == true && rb.velocity.magnitude < 0.01) reappear();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,9 +70,11 @@ public class DerangedMakobii : MonoBehaviour
 
     void attack()
     {
+        attacked = true;
         rb.velocity = (transform.forward * attackMoveSpeed);
         animator.SetTrigger("Attack");
         StartCoroutine(lightIncrease());
+        
     }
 
     IEnumerator lightIncrease()
@@ -84,5 +94,14 @@ public class DerangedMakobii : MonoBehaviour
     void hurt()
     {
         
+    }
+
+    public void reappear()
+    {
+        if (handler != null)
+        {
+            handler.dissapearParticles(this.gameObject);
+        }
+        transform.position = initialPos;
     }
 }

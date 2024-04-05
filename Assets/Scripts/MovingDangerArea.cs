@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 //used by moving danger areas which chase the player
 public class MovingDangerArea: MonoBehaviour
@@ -15,6 +16,8 @@ public class MovingDangerArea: MonoBehaviour
     public bool xDirection;
     public bool yDirection;
     public bool zDirection;
+
+    public UnityEvent[] resetEvents;
 
     void Start()
     {
@@ -108,10 +111,17 @@ public class MovingDangerArea: MonoBehaviour
         
     }
     
-    public void resetPos()
+    public void resetPos() 
     {
         Debug.Log("back to start");
         start = false;
         transform.position = startPos;
+
+        foreach(UnityEvent ev in resetEvents)
+        {
+            ev.Invoke();
+        }
     }
+
+    
 }
