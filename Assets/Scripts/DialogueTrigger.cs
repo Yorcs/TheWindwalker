@@ -41,10 +41,10 @@ public class DialogueTrigger : MonoBehaviour
                     case "Walking2":
                         FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walkingTwo);
                         break;
-                    /*case "OutsideLevel2":
-                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking2);
+                    case "Dream2":
+                        FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.dreamTwo);
                         break;
-                    case "OutsideLevel3":
+                    /*case "OutsideLevel3":
                         //FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking3);
                         break;
                     case "DreamLevelOne":

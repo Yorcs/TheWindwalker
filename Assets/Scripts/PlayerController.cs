@@ -147,9 +147,10 @@ public class PlayerController : MonoBehaviour
 
         //if the player is in a danger zone
         if (loseHealth)
-        {
+        {           
             //deduct health and display on UI
             health -= 15 * Time.deltaTime;
+            Debug.Log(health);
             display.value = health;
 
             //if health is less than 0, send the player back to the previous checkpoint

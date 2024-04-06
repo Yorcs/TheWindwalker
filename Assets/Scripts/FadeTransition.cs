@@ -53,11 +53,11 @@ public class FadeTransition : MonoBehaviour
                     ChoiceManager.shardsFound++;
                     break;
                 case "Walking2":
-                    SceneManager.LoadScene("Cutscene4");
-                    break;
-                case "Cutscene4":
                     SceneManager.LoadScene("Dream2");
                     break;
+                /*case "Cutscene4":
+                    SceneManager.LoadScene("Dream2");
+                    break;*/
                 case "Dream2":
                     SceneManager.LoadScene("Cutscene5");
                     ChoiceManager.shardsFound++;
