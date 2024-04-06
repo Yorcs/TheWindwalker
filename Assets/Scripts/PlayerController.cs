@@ -206,7 +206,7 @@ public class PlayerController : MonoBehaviour
         {
             startPos = other.transform.position;
             startRot = other.transform.rotation;
-            string[] response = { "*T Found a safe area." };
+            string[] response = { "*T Checkpoint." };
             FindObjectOfType<DialogueManager>().automaticDialogue(response);
             other.GetComponent<ParticleSystem>().Stop();
             Destroy(other.gameObject);

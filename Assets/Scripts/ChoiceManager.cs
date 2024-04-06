@@ -53,15 +53,15 @@ public class ChoiceManager: MonoBehaviour
                 scene2Done = true;
                 scene2 = choice;
                 Debug.Log(scene2);
-                if(choice) FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act2Scene2choice1);
-                else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act2Scene2choice2);
+                //if(choice) FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act2Scene2choice1);
+                //else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act2Scene2choice2);
                 break;
             case "DreamLevelOneEnd":
                 level1Done = true;
                 level1 = choice;
                 Debug.Log(level1);
-                if (choice) FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.dreamLevelOnePos);
-                else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.dreamLevelOneNeg);
+               // if (choice) FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.dreamLevelOnePos);
+                //else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.dreamLevelOneNeg);
                 break;
         }
 

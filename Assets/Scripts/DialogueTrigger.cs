@@ -28,14 +28,20 @@ public class DialogueTrigger : MonoBehaviour
             else
             {
                 switch (SceneManager.GetActiveScene().name){
+                    case "Dream0":                     
+                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.tutorialIntro);
+                        break;
                     case "OutsideLevelZero":
-                        if(tag == "CutsceneOne") FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.act1Scene2p1);
-                        else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.act1Scene2p2);
+                        if(tag == "CutsceneOne") FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.villageIntro);
+                        else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.shopkeeperScene);
                         break;
-                    case "OutsideLevel1":
-                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking1);
+                    case "Walking1":
+                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walkingOne);
                         break;
-                    case "OutsideLevel2":
+                    case "Walking2":
+                        FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walkingTwo);
+                        break;
+                    /*case "OutsideLevel2":
                         FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking2);
                         break;
                     case "OutsideLevel3":
@@ -43,7 +49,7 @@ public class DialogueTrigger : MonoBehaviour
                         break;
                     case "DreamLevelOne":
                         FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.dreamLevelOneIntro);
-                        break;
+                        break;*/
                     default:
                         FindObjectOfType<DialogueManager>().automaticDialogue(dialogue);
                         break;

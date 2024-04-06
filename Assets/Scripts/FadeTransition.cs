@@ -28,57 +28,59 @@ public class FadeTransition : MonoBehaviour
             switch (SceneManager.GetActiveScene().name)
             {
                 case "MainMenu":
-                    SceneManager.LoadScene("DreamTutorial"); //switch to cutscene #1
+                    SceneManager.LoadScene("Cutscene1");
                     break;
-                /*case "MainMenu": //cutscene1
-                    SceneManager.LoadScene("DreamTutorial"); 
-                    break;*/
-                case "DreamTutorial":
-                    SceneManager.LoadScene("OutsideLevelZero"); //switch to cutscene #2
+                case "Cutscene1":
+                    SceneManager.LoadScene("Dream0"); 
                     break;
-                /*case "DreamTutorial": //cutscene2
-                    SceneManager.LoadScene("OutsideLevelZero"); //switch to village
-                    break;*/
+                case "Dream0":
+                    SceneManager.LoadScene("Cutscene2");
+                    break;
+                case "Cutscene2":
+                    SceneManager.LoadScene("OutsideLevelZero");
+                    break;
                 case "OutsideLevelZero":
-                    SceneManager.LoadScene("Act1Scene3"); //makobii intro cutscene
+                    SceneManager.LoadScene("Cutscene3"); 
                     break;
-                case "Act1Scene3": //makobii intro cutscene
-                    SceneManager.LoadScene("OutsideLevel1"); //walkingone
+                case "Cutscene3":
+                    SceneManager.LoadScene("Walking1");
                     break;
-                case "OutsideLevel1": //walking one
-                    SceneManager.LoadScene("Act2Scene2");//dream 1
+                case "Walking1":
+                    SceneManager.LoadScene("Dream1");
+                    break;
+                case "Dream1":
+                    SceneManager.LoadScene("Walking2");
                     ChoiceManager.shardsFound++;
                     break;
-                case "Act2Scene2": //family picnic dream
-                    SceneManager.LoadScene("OutsideLevel2"); //walking two
+                case "Walking2":
+                    SceneManager.LoadScene("Cutscene4");
                     break;
-                case "OutsideLevel2": //walkingtwo
-                    SceneManager.LoadScene("DreamLevelOne"); //dream 2 intro cutscene
+                case "Cutscene4":
+                    SceneManager.LoadScene("Dream2");
+                    break;
+                case "Dream2":
+                    SceneManager.LoadScene("Cutscene5");
                     ChoiceManager.shardsFound++;
                     break;
-                /*case "OutsideLevel2": //dream 2 intro cutscene
-                    SceneManager.LoadScene("DreamLevelOne"); //dream 2
+                case "Cutscene5":
+                    SceneManager.LoadScene("Cutscene6");
+                    break;
+                case "Cutscene6":
+                    SceneManager.LoadScene("Dream3");
+                    break;
+                case "Dream3":
+                    SceneManager.LoadScene("Cutscene7");
                     ChoiceManager.shardsFound++;
                     break;
-                case "OutsideLevel2": //dream 2
-                    SceneManager.LoadScene("DreamLevelOne"); //dream 2 end cutscene
-                    ChoiceManager.shardsFound++;
-                    break;*/
-                case "DreamLevelOne": //dream 3 intro cutscene
-                    SceneManager.LoadScene("DreamLevelOneEnd"); //dream 3
+                case "Cutscene7":
+                    SceneManager.LoadScene("Dream4");
                     break;
-                /*case "DreamLevelOne": //dream 3
-                    SceneManager.LoadScene("DreamLevelOneEnd"); //dream 3 end cutscene 
+                case "Dream4":
+                    SceneManager.LoadScene("Cutscene8");
                     break;
-                 case "DreamLevelOne": //dream 3 end
-                    SceneManager.LoadScene("DreamLevelOneEnd"); dream 4      
+                case "Cutscene8":
+                    SceneManager.LoadScene("Cutscene9");
                     break;
-                case "DreamLevelOne": //dream 4
-                    SceneManager.LoadScene("DreamLevelOneEnd"); //dream 4 end cutscene
-                    break;
-                case "DreamLevelOne": //dream 4 end cutscene
-                    SceneManager.LoadScene("DreamLevelOneEnd"); //finale cutscene
-                    break; */
             }          
         }
     }
