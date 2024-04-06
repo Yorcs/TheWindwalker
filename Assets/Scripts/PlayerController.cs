@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
             if (isOnGround)
             {
-                if(SceneManager.GetActiveScene().name == "DreamLevelThreeNew")
+                if(SceneManager.GetActiveScene().name == "Dream4")
                 rb.drag = 7;
                 else
                 rb.drag = groundDrag;
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 playerAnimator.SetBool("Running", true);
-                if (SceneManager.GetActiveScene().name == "DreamLevelThreeNew")
+                if (SceneManager.GetActiveScene().name == "Dream4")
                 {
                     speed = 12;
                 }
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 playerAnimator.SetBool("Running", false);
-                if (SceneManager.GetActiveScene().name == "DreamLevelThreeNew")
+                if (SceneManager.GetActiveScene().name == "Dream4")
                 {
                     speed = 10;
                 }
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
 
         //if the player is in a danger zone
         if (loseHealth)
-        {           
+        {   
             //deduct health and display on UI
             health -= 15 * Time.deltaTime;
             Debug.Log(health);
@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
             regenHealth = false;
             delayCounter = 0;
 
-            if (SceneManager.GetActiveScene().name == "DreamLevelThreeNew")
+            if (SceneManager.GetActiveScene().name == "Dream4")
             {
                 health = 0;
                 FindAnyObjectByType<Path>().backToStart();

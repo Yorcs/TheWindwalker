@@ -40,15 +40,16 @@ public class DialogueManager : MonoBehaviour
     //H = Healer
     //L = stern mother
     //C = children (plural, like its not important which one is saying which cuase it's just noise to Toyen)
+    //... = empty, used for image only
 
     //NEW AS OF 4/2
     public static string[] introCut =
     {
         "*T The last five have been empty, even though this area should provide a closer connection...",
         "*T But I’m getting closer, my family is so close I can feel it...",
-        "*T ...",
+        "...",
         "*T Finally another Fragment...",
-        "*T ..."
+        "..."
     };
 
     public static string[] tutorialIntro =
@@ -61,7 +62,7 @@ public class DialogueManager : MonoBehaviour
     public static string[] tutorialEnd =
     {
         "*T You! Show yourself!",
-        "*T ...",
+        "...",
         "*T Well, time to get into town."
     };
 
@@ -89,7 +90,7 @@ public class DialogueManager : MonoBehaviour
         "*S All right. I’ll give you a loan. Whether or not you pay me back.",
         "*S It’ll last you a week, but I got one little gift for you.",
         "*S You look exhausted. Use this to rest when you really need it.",
-        "*T ..."
+        "..."
     };
 
     public static string[] makobiiIntro =
@@ -189,14 +190,14 @@ public class DialogueManager : MonoBehaviour
         "*M You will remember whatever memory it is, but I doubt it's your lost memory...",
         "*M It's likely something else you’ve forgotten over the years.A...small meal... in Makobii terms... but...",
         "*T A small meal?!",
-        "*T ...",
+        "...",
         "*M A talisman!",
         "*T You just want to eat my memory don’t you! That’s all you can think about!",
         "*M Aghh!",
-        "*T ...",
+        "...",
         "*T Makobii!",
         "*T  Makobii! Answer me!",
-        "*M ...",
+        "...",
         "*M You’ve had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
         "*T Do you think I’m stupid enough to agree to this insane gambit if I didn’t have a way to stop you from taking it?",
         "*T Besides I was right to, you were just looking for your next meal!",
@@ -205,7 +206,7 @@ public class DialogueManager : MonoBehaviour
         "*T Don’t you dare! They're out there! They're waiting for me!",
         "*M You’re waiting for them! And if you want to wait longer, go to that cliff!",
         "*M There is a fragment there that leads to the forgotten memory.And if you don’t find it, jump off!",
-        "*T ..."
+        "..."
     };
 
     public static string[] dreamThree =
@@ -213,7 +214,7 @@ public class DialogueManager : MonoBehaviour
         "*T Makobii?",
         "*T Makobii, are you there?", //toyen touches the memory shard
         "*T Makobii? Is that you?",  //in dreamscape
-        "*T ...", 
+        "...", 
         "*M I can’t hold them for long! Get your memory!",
         "*T But they’ll kill you!",
         "*M The age of Makobii is over, go Toyen, if this memory will bring you peace, then it’s worth a hundred of my deaths.",
@@ -223,7 +224,7 @@ public class DialogueManager : MonoBehaviour
     public static string[] dreamThreeEnd =
     {
         "*T NO! I was so close!",
-        "*M ...",
+        "...",
         "*T Makobii! What’s happening?",
         "*M Ah, it’s a small wound, nothing to worry about...",
         "*T Don’t try to trick me now...",
@@ -246,15 +247,15 @@ public class DialogueManager : MonoBehaviour
         "*T We will win, the age of the Makobii might be over, humans may have conquered the dream eaters, but you said it yourself,",
         "*T ‘None are as skilled as I, when it comes to dreaming’",
         "*T Now let’s go find it.",
-        "*T ..." //toyen touches mask
+        "..." //toyen touches mask
     };
 
     public static string[] dreamFourEnd =
     {
-        "*T ...",
+        "...",
         "*T I don’t need it, I never did.",
-        "*M ...",
-        "*M ...", //makobii transforms
+        "...",
+        "...", //makobii transforms
         "*M Why... why would you do such a thing? You had it, it was right in front of–",
         "*T I tricked you!",
         "*M Huh?",
@@ -265,7 +266,7 @@ public class DialogueManager : MonoBehaviour
         "*M Heheh, I hope so.",
         "*T That’s besides the point, how are you feeling?",
         "*M Better than I have in a long time. I think I won't have to eat for a thousand years.",
-        "*M ...", //makobii gives beads
+        "...", //makobii gives beads
         "*M A gift, to remember me by.",
         "*T What, no more adventures?",
         "*M We both know this is where we say farewell.",
@@ -276,7 +277,7 @@ public class DialogueManager : MonoBehaviour
     {
         "*S Toyen! So were you close?",
         "*T I was, but I gave up.",
-        "*T ...",
+        "...",
         "*T I made a friend on the road, and they taught me a lesson about myself.",
         "*S Oh? Are you going to be traveling with them then?",
         "*T They have their own life to get to, and they helped me realize, I do too.",
@@ -448,8 +449,19 @@ public class DialogueManager : MonoBehaviour
                 }
             }*/
 
-
+            
             string sentence = sentences.Dequeue();
+            if (sentence.Equals("..."))
+            {
+                if (GameObject.Find("NameBox")) GameObject.Find("NameBox").GetComponent<CanvasGroup>().alpha = 0;
+                if (GameObject.Find("DialogueBox")) GameObject.Find("DialogueBox").GetComponent<CanvasGroup>().alpha = 0;
+            }
+            else
+            {
+                if (GameObject.Find("NameBox")) GameObject.Find("NameBox").GetComponent<CanvasGroup>().alpha = 1;
+                if (GameObject.Find("DialogueBox")) GameObject.Find("DialogueBox").GetComponent<CanvasGroup>().alpha = 1;
+            }
+
             switch (sentence.Substring(0, 2))
             {
                 case "*T":
@@ -474,7 +486,40 @@ public class DialogueManager : MonoBehaviour
             }
             if (FindAnyObjectByType<CameraManager>())
             {
-                if (sentences.Count % 2 == 0)
+                switch (SceneManager.GetActiveScene().name)
+                {
+                    case "OutsideLevelZero":
+                        if (GameObject.Find("Name"))
+                        {
+                            if(GameObject.Find("Name").GetComponent<Text>().text.Equals("Shopkeeper"))
+                            {
+                                FindAnyObjectByType<CameraManager>().cam2.enabled = false;
+                                FindAnyObjectByType<CameraManager>().cam1.enabled = true;
+                            }
+                            else
+                            {
+                                FindAnyObjectByType<CameraManager>().cam2.enabled = true;
+                                FindAnyObjectByType<CameraManager>().cam1.enabled = false;
+                            }
+                        }
+                        break;
+                    case "Dream2":
+                        if (GameObject.Find("Name"))
+                        {
+                            if (GameObject.Find("Name").GetComponent<Text>().text.Equals("Toyen"))
+                            {
+                                FindAnyObjectByType<CameraManager>().cam2.enabled = false;
+                                FindAnyObjectByType<CameraManager>().cam1.enabled = true;
+                            }
+                            else
+                            {
+                                FindAnyObjectByType<CameraManager>().cam2.enabled = true;
+                                FindAnyObjectByType<CameraManager>().cam1.enabled = false;
+                            }
+                        }
+                        break;
+                }
+                /*if (sentences.Count % 2 == 0)
                 {
                     FindAnyObjectByType<CameraManager>().cam1.enabled = false;
                     FindAnyObjectByType<CameraManager>().cam2.enabled = true;
@@ -483,7 +528,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     FindAnyObjectByType<CameraManager>().cam2.enabled = false;
                     FindAnyObjectByType<CameraManager>().cam1.enabled = true;
-                }
+                }*/
 
             }
             StartCoroutine(ProgressSentence(sentence));

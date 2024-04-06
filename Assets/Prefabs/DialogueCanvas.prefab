@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 2672993178334155305}
   - component: {fileID: 2917016302147615295}
   - component: {fileID: 5440172281039645569}
+  - component: {fileID: 744008417464372432}
   m_Layer: 5
   m_Name: NameBox
   m_TagString: Untagged
@@ -352,6 +353,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &744008417464372432
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599514426522811252}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5039318201153228496
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +376,7 @@ GameObject:
   - component: {fileID: 167123710295503505}
   - component: {fileID: 3921637410111581409}
   - component: {fileID: 5817086682368422136}
+  - component: {fileID: 2845847742309991591}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -428,6 +442,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2845847742309991591
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039318201153228496}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5297589348311333241
 GameObject:
   m_ObjectHideFlags: 0
