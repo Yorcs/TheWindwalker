@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public float delayRegen = 3;
     public float delayCounter = 0;
     public bool regenHealth = false;
+    public Image healthFill;
+    public Gradient gradient;
 
     public Animator playerAnimator;
 
@@ -152,6 +154,8 @@ public class PlayerController : MonoBehaviour
             health -= 15 * Time.deltaTime;
             Debug.Log(health);
             display.value = health;
+            healthFill.color = gradient.Evaluate(health / 100f);
+           
 
             //if health is less than 0, send the player back to the previous checkpoint
             if (health <= 0)
@@ -205,8 +209,8 @@ public class PlayerController : MonoBehaviour
             }       
         }else if(other.tag == "Checkpoint") //if player collides with a checkpoint, set that as the new starting pos/rot
         {
-            startPos = other.transform.position;
-            startRot = other.transform.rotation;
+            startPos = transform.position;
+            startRot = transform.rotation;
             string[] response = { "*T Checkpoint." };
             FindObjectOfType<DialogueManager>().automaticDialogue(response);
             other.GetComponent<ParticleSystem>().Stop();

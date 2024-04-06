@@ -7976,8 +7976,12 @@ PrefabInstance:
       value: 0.87948245
       objectReference: {fileID: 0}
     - target: {fileID: 1625499271263149678, guid: e450ef173e369490cbaf839293f79614, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1194
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625499271263149678, guid: e450ef173e369490cbaf839293f79614, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -621
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: 3326158152092947100, guid: e450ef173e369490cbaf839293f79614, type: 3}
       propertyPath: m_IsActive
@@ -8084,6 +8088,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e450ef173e369490cbaf839293f79614, type: 3}
+--- !u!114 &388066976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1840770487593635328, guid: e450ef173e369490cbaf839293f79614, type: 3}
+  m_PrefabInstance: {fileID: 388066975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &396716378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d184f6721d6dc484f8cbb70cb229722c, type: 3}
@@ -30757,6 +30772,50 @@ PrefabInstance:
       propertyPath: display
       value: 
       objectReference: {fileID: 1589345618}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: healthFill
+      value: 
+      objectReference: {fileID: 388066976}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.ctime1
+      value: 25925
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.key1.b
+      value: 0.044588834
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.key1.g
+      value: 0.65723735
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.key1.r
+      value: 0.7877358
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.key2.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.key2.r
+      value: 0.05254495
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655915252205836802, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
+      propertyPath: gradient.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6821313446278303924, guid: e35b9027a7c759743b60bc5352c5c9c5, type: 3}
       propertyPath: m_Name
       value: PlayerW_Cam

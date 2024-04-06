@@ -32,8 +32,14 @@ public class DialogueTrigger : MonoBehaviour
                         FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.tutorialIntro);
                         break;
                     case "OutsideLevelZero":
-                        if(tag == "CutsceneOne") FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.villageIntro);
-                        else FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.shopkeeperScene);
+                        if (tag == "CutsceneOne") FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.villageIntro);
+                        else
+                        {
+                            FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.shopkeeperScene);
+                            FindObjectOfType<PlayerController>().playerAnimator.SetBool("Moving", false);
+                            FindObjectOfType<PlayerController>().playerAnimator.SetBool("Jumping", false);
+                            FindObjectOfType<PlayerController>().playerAnimator.SetBool("Running", false);
+                        }
                         break;
                     case "Walking1":
                         FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walkingOne);
@@ -43,6 +49,9 @@ public class DialogueTrigger : MonoBehaviour
                         break;
                     case "Dream2":
                         FindObjectOfType<DialogueManager>().StartDialogue(DialogueManager.dreamTwo);
+                        FindObjectOfType<PlayerController>().playerAnimator.SetBool("Moving", false);
+                        FindObjectOfType<PlayerController>().playerAnimator.SetBool("Jumping", false);
+                        FindObjectOfType<PlayerController>().playerAnimator.SetBool("Running", false);
                         break;
                     /*case "OutsideLevel3":
                         //FindObjectOfType<DialogueManager>().automaticDialogue(DialogueManager.walking3);
