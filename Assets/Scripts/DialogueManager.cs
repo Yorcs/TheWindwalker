@@ -47,8 +47,9 @@ public class DialogueManager : MonoBehaviour
     public static string[] tutorialEnd =
     {
         "*T You! Show yourself!",
-        "...",
+        "*T ...",
         "*T Well, time to get into town."
+       
     };
 
     public static string[] vilageIntro = //ingame
@@ -129,7 +130,7 @@ public class DialogueManager : MonoBehaviour
         "*M HA! No... more that you can’t begin to understand yourself, you face no inner conflict when you are out in the wild pursuing your goal, but when you ask for another loan from the shopkeeper, you feel shame.",
         "*T But I need supplies to continue on my journey, I’ll pay him back later, when I’m not so close.",
         "*M When you finally find your family, will you really go back and pay him? Will you even be able too?",
-        "*T ...",
+        "...",
         "*T Whatever, let’s keep going, we need to go deeper into the dream.",
         "*M Deeper? This is it, Toyen. It’s like I said, This is what you are dreaming of.",
         "*M People, passing by, not paying attention to you.",
@@ -195,6 +196,7 @@ public class DialogueManager : MonoBehaviour
         "*T Makobii!",
         "*T  Makobii! Answer me!",
         "...",
+        "...",
         "*M You’ve had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
         "*T Do you think I’m stupid enough to agree to this insane gambit if I didn’t have a way to stop you from taking it?",
         "*T Besides I was right to, you were just looking for your next meal!",
@@ -210,7 +212,7 @@ public class DialogueManager : MonoBehaviour
     {
         "*T Makobii?",
         "*T Makobii, are you there?", 
-        "*T ...",//toyen touches the memory shard
+        "...",//toyen touches the memory shard
         "*T Makobii? Is that you?",  //in dreamscape
         "...", 
         "*M I can’t hold them for long! Get your memory!",
@@ -220,10 +222,10 @@ public class DialogueManager : MonoBehaviour
     };
 
     public static string[] dreamThreeEnd =
-    {   "*T ...",
-        "*T ...",
-        "*T ...",
-        "*T ...",
+    {   "...",
+        "...",
+        "...",
+        "...",
         "*T NO! I was so close!",
         "...",
         "*T Makobii! What’s happening?",
@@ -252,16 +254,11 @@ public class DialogueManager : MonoBehaviour
     };
 
     public static string[] dreamFourEnd =
-    {
+    {   "...",
         "...",
         "*T I don’t need it, I never did.",
         "...",
         "...", //makobii transforms
-        "...",
-        "...",
-        "*T I don’t need it, I never did.",
-        "...",
-        "...", //makobii transforms - light effect
         "*M Why... why would you do such a thing? You had it, it was right in front of–",
         "*T I tricked you!",
         "*M Huh?",
