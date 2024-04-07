@@ -54,8 +54,38 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(groundDrag);
         //if the player is not locked, allow for movement
         if (!LockedPlayer) {
+
+            //check for shift to sprint
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                playerAnimator.SetBool("Running", true);
+                if (SceneManager.GetActiveScene().name == "Dream4")
+                {
+                    speed = 12;
+                }
+                else
+                {
+                    speed = 8;
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                playerAnimator.SetBool("Running", false);
+                if (SceneManager.GetActiveScene().name == "Dream4")
+                {
+                    speed = 10;
+                }
+                else
+                {
+                    speed = 5;
+                }
+
+            }
+
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
 
@@ -117,37 +147,7 @@ public class PlayerController : MonoBehaviour
 
 
             }
-
-            //check for shift to sprint
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                playerAnimator.SetBool("Running", true);
-                if (SceneManager.GetActiveScene().name == "Dream4")
-                {
-                    speed = 12;
-                }
-                else
-                {
-                    speed = 8;
-                }
-            }
-
-            if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                playerAnimator.SetBool("Running", false);
-                if (SceneManager.GetActiveScene().name == "Dream4")
-                {
-                    speed = 10;
-                }
-                else
-                {
-                    speed = 5;
-                }
-
-            }
         }
-
-        Debug.Log(groundDrag);
 
         //if the player is in a danger zone
         if (loseHealth)

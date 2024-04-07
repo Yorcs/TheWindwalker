@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour
        
     };
 
-    public static string[] vilageIntro = //ingame
+    public static string[] villageIntro = //ingame
     {
         "*L Why would you want to go sleep in the fields outside the village?!",
         "*L You know what will come out to get you!",

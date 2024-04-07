@@ -104,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2474377535953634058}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.097436525, y: 0.14835133, z: 0.0146896755, w: 0.9840134}
+  m_LocalRotation: {x: -0.09743651, y: 0.1483513, z: 0.014689671, w: 0.9840134}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -310,7 +310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3142378117045264712}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.14306772, y: 0.14750823, z: 0.021569105, w: 0.97842103}
+  m_LocalRotation: {x: -0.14306772, y: 0.1475082, z: 0.021569101, w: 0.97842103}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -521,8 +521,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4661453322362202491}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.14468448, y: 0.000000034607194, z: 0.0000000050603695, w: 0.9894779}
-  m_LocalPosition: {x: -74.44, y: -69.28008, z: -40.72}
+  m_LocalRotation: {x: -0.14468446, y: -0.000000034528117, z: -0.0000000050488063, w: 0.9894779}
+  m_LocalPosition: {x: 14.365205, y: -69.44016, z: -29.349295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1321,7 +1321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689549594024671653, guid: a410053220bf44f30be2e995a2a9b647, type: 3}
       propertyPath: speed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2689549594024671653, guid: a410053220bf44f30be2e995a2a9b647, type: 3}
       propertyPath: parent
@@ -1333,7 +1333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689549594024671653, guid: a410053220bf44f30be2e995a2a9b647, type: 3}
       propertyPath: groundDrag
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2689549594024671653, guid: a410053220bf44f30be2e995a2a9b647, type: 3}
       propertyPath: orientation
