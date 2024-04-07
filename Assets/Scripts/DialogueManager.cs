@@ -384,13 +384,13 @@ public class DialogueManager : MonoBehaviour
             }
 
             hotkeyEnabled = true;
-            imageCounter++;
             //Debug.Log("/ UIAssets / Cutscenes / A1S3 / a1s3_" + imageCounter + ".png");
             Sprite temp;
-            Debug.Log(imageCounter);
-
+           
             if (GameObject.Find("CutsceneImage"))
             {
+                imageCounter++;
+                Debug.Log(imageCounter);
                 switch (SceneManager.GetActiveScene().name)
                 {
                     case "Cutscene1":
@@ -431,7 +431,7 @@ public class DialogueManager : MonoBehaviour
                     case "Cutscene5":
                         if (imageCounter <= dreamTwoEnd.Length)
                         {
-                            temp = Resources.Load<Sprite>("Sprites/Cutscene5/cutscene3_" + imageCounter);
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene5/cutscene5_" + imageCounter);
                             GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
                         }
                         break;
