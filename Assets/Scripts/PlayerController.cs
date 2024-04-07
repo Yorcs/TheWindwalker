@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (!LockedPlayer) {
 
             //check for shift to sprint
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) && SceneManager.GetActiveScene().name != "Walking1" && SceneManager.GetActiveScene().name != "Walking2")
             {
                 playerAnimator.SetBool("Running", true);
                 if (SceneManager.GetActiveScene().name == "Dream4")
@@ -182,7 +182,8 @@ public class PlayerController : MonoBehaviour
             {
                 health += 12 * Time.deltaTime;
                 display.value = health;
-                if(health > 100)
+                healthFill.color = gradient.Evaluate(health / 100f);
+                if (health > 100)
                 {
                     health = 100;
                     delayCounter = 0;

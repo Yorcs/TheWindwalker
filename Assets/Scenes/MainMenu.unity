@@ -143,6 +143,14 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7277715510724504960, guid: 24c907b22023ac04fbd2d5737ab4f93e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277715510724504960, guid: 24c907b22023ac04fbd2d5737ab4f93e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -264080965
+      objectReference: {fileID: 0}
     - target: {fileID: 7610821661636696096, guid: 24c907b22023ac04fbd2d5737ab4f93e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
