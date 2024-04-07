@@ -389,68 +389,75 @@ public class DialogueManager : MonoBehaviour
             Sprite temp;
             Debug.Log(imageCounter);
 
-            /*if (GameObject.Find("CutsceneImage"))
+            if (GameObject.Find("CutsceneImage"))
             {
                 switch (SceneManager.GetActiveScene().name)
                 {
-                    case "Act1Scene3":
-                        if (imageCounter < act1Scene3.Length)
+                    case "Cutscene1":
+                        if (imageCounter <= introCut.Length)
                         {
-                            temp = Resources.Load<Sprite>("Sprites/A1S3/a1s3_" + imageCounter);
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene1/Cutscene1_" + imageCounter);
                             GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
                         }
                         break;
-                    case "Act2Scene2":
-                        if (imageCounter < act2Scene2.Length && !ChoiceManager.scene2Done)
+                    case "Cutscene2":
+                        if (imageCounter <= tutorialEnd.Length)
                         {
-                            temp = Resources.Load<Sprite>("Sprites/A2S2/a2s2_" + imageCounter);
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene2/Cutscene2_" + imageCounter);
                             GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
                         }
-                        else
-                        {
-                            if (imageCounter < act2Scene2.Length + act2Scene2choice1.Length && ChoiceManager.scene2Done)
-                            {
-                                if(ChoiceManager.scene2) temp = Resources.Load<Sprite>("Sprites/A2S2/a2s2c1_" + imageCounter);
-                                else temp = Resources.Load<Sprite>("Sprites/A2S2/a2s2c2_" + imageCounter);
-                                GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
-                            }
-                        }
                         break;
-                    case "DreamLevelOneEnd":
-                        if (imageCounter < dreamLevelOneEnd.Length && !ChoiceManager.level1Done)
+                    case "Cutscene3":
+                        if (imageCounter <= makobiiIntro.Length)
                         {
-                            temp = Resources.Load<Sprite>("Sprites/Level1End/a2s3_" + imageCounter);
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene3/cutscene3_" + imageCounter);
                             GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
                         }
-                        else
+                        break;
+                    case "Cutscene4":
+                        if (imageCounter <= dreamOne.Length)
                         {
-                            Debug.Log("here 1");
-                            if (imageCounter < dreamLevelOneEnd.Length + dreamLevelOnePos.Length && ChoiceManager.level1Done && ChoiceManager.level1)
-                            {
-                                Debug.Log("here 2");
-                                if (ChoiceManager.level1)
-                                {
-                                    Debug.Log("here 3");
-                                    temp = Resources.Load<Sprite>("Sprites/Level1End/a2s3c1_" + imageCounter);
-                                    GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
-                                }
-                            }
-                            else if (imageCounter < dreamLevelOneEnd.Length + dreamLevelOneNeg.Length && ChoiceManager.level1Done && !ChoiceManager.level1)
-                            {
-                                Debug.Log("here 2");
-                                if (!ChoiceManager.level1)
-                                {
-                                    Debug.Log("here 3");
-                                    temp = Resources.Load<Sprite>("Sprites/Level1End/a2s3c2_" + imageCounter);
-                                    GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
-                                }
-                            }
-                            
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene4/cutscene3_" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
                         }
                         break;
-
+                    case "Cutscene5":
+                        if (imageCounter <= dreamTwoEnd.Length)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene5/cutscene3_" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        break;
+                    case "Cutscene6":
+                        if (imageCounter <= dreamThree.Length)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene6/cutscene3_" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        break;
+                    case "Cutscene7":
+                        if (imageCounter <= dreamThreeEnd.Length)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene7/cutscene7-" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        break;
+                    case "Cutscene8":
+                        if (imageCounter <= dreamFourEnd.Length)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene8/cutscene3_" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        break;
+                    case "Cutscene9":
+                        if (imageCounter <= finalScene.Length)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene9/cutscene9-" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        break;
                 }
-            }*/
+            }
 
             
             string sentence = sentences.Dequeue();
@@ -541,6 +548,7 @@ public class DialogueManager : MonoBehaviour
     //turns off the dialogue UI
     public void endDialogue()
     {
+        imageCounter = 0;
         if (FindAnyObjectByType<CameraManager>())
         {
             FindAnyObjectByType<CameraManager>().cam1.enabled = false;

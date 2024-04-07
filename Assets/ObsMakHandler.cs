@@ -30,7 +30,7 @@ public class ObsMakHandler : MonoBehaviour
         makobii[currMak].gameObject.SetActive(false);
 
         currMak++;
-        if (currMak < makobii.Length)
+        if (currMak < makobii.Length-1)
         {
             makobii[currMak].gameObject.SetActive(true);
             newParticles();
