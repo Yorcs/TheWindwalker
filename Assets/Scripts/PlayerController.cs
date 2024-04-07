@@ -147,6 +147,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        Debug.Log(groundDrag);
+
         //if the player is in a danger zone
         if (loseHealth)
         {   

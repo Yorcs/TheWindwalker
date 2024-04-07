@@ -32,15 +32,9 @@ public class DialogueManager : MonoBehaviour
     {
         "*T The last five have been empty, even though this area should provide a closer connection...",
         "*T But I’m getting closer, my family is so close I can feel it...",
-<<<<<<< Updated upstream
         "...",
         "*T Finally another Fragment...",
         "..."
-=======
-        "*T ...",//makobii shows up
-        "*T Finally another Fragment..."
-        
->>>>>>> Stashed changes
     };
 
     public static string[] tutorialIntro =//ingame
@@ -53,21 +47,8 @@ public class DialogueManager : MonoBehaviour
     public static string[] tutorialEnd =
     {
         "*T You! Show yourself!",
-<<<<<<< Updated upstream
         "...",
         "*T Well, time to get into town."
-    };
-
-    public static string[] villageIntro =
-    {
-        "*L Why would you want to go sleep in the fields outside the village?!",
-        "*L You know what will come out to get you!",
-        "*L I know you think you're safe because of the totems, but I remember a time before that safety."
-=======
-        "*T ...",
-        "*T Well, time to get into town."
-       
->>>>>>> Stashed changes
     };
 
     public static string[] vilageIntro = //ingame
@@ -207,22 +188,13 @@ public class DialogueManager : MonoBehaviour
         "*M You will remember whatever memory it is, but I doubt it's your lost memory...",
         "*M It's likely something else you’ve forgotten over the years.A...small meal... in Makobii terms... but...",
         "*T A small meal?!",
-<<<<<<< Updated upstream
-        "...",
-=======
->>>>>>> Stashed changes
         "*M A talisman!",
         "*T You just want to eat my memory don’t you! That’s all you can think about!",
         "*M Aghh!",
         "...",
         "*T Makobii!",
         "*T  Makobii! Answer me!",
-<<<<<<< Updated upstream
         "...",
-=======
-        "*M ...",
-        "*T ...",
->>>>>>> Stashed changes
         "*M You’ve had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
         "*T Do you think I’m stupid enough to agree to this insane gambit if I didn’t have a way to stop you from taking it?",
         "*T Besides I was right to, you were just looking for your next meal!",
@@ -281,18 +253,15 @@ public class DialogueManager : MonoBehaviour
 
     public static string[] dreamFourEnd =
     {
-<<<<<<< Updated upstream
         "...",
         "*T I don’t need it, I never did.",
         "...",
         "...", //makobii transforms
-=======
-        "*T ...",
-        "*T ..."
+        "...",
+        "...",
         "*T I don’t need it, I never did.",
-        "*T ...",
-        "*M ...", //makobii transforms - light effect
->>>>>>> Stashed changes
+        "...",
+        "...", //makobii transforms - light effect
         "*M Why... why would you do such a thing? You had it, it was right in front of–",
         "*T I tricked you!",
         "*M Huh?",
