@@ -47,7 +47,7 @@ public class DialogueManager : MonoBehaviour
     public static string[] tutorialEnd =
     {
         "*T You! Show yourself!",
-        "*T ...",
+        "...",
         "*T Well, time to get into town."
        
     };
@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour
     {
         "*L Why would you want to go sleep in the fields outside the village?!",
         "*L You know what will come out to get you!",
-        "I know you think you're safe because of the totems, but I remember a time before that safety."
+        "*L I know you think you're safe because of the totems, but I remember a time before that safety."
     };
 
     public static string[] shopkeeperScene =//one frame 
