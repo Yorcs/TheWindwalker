@@ -32,12 +32,18 @@ public class DialogueManager : MonoBehaviour
     {
         "*T The last five have been empty, even though this area should provide a closer connection...",
         "*T But I’m getting closer, my family is so close I can feel it...",
+<<<<<<< Updated upstream
         "...",
         "*T Finally another Fragment...",
         "..."
+=======
+        "*T ...",//makobii shows up
+        "*T Finally another Fragment..."
+        
+>>>>>>> Stashed changes
     };
 
-    public static string[] tutorialIntro =
+    public static string[] tutorialIntro =//ingame
     {
         "*T There must be a fragment of my memories here...",
         "*T ...but this looks just as empty as the last.",
@@ -47,6 +53,7 @@ public class DialogueManager : MonoBehaviour
     public static string[] tutorialEnd =
     {
         "*T You! Show yourself!",
+<<<<<<< Updated upstream
         "...",
         "*T Well, time to get into town."
     };
@@ -56,9 +63,21 @@ public class DialogueManager : MonoBehaviour
         "*L Why would you want to go sleep in the fields outside the village?!",
         "*L You know what will come out to get you!",
         "*L I know you think you're safe because of the totems, but I remember a time before that safety."
+=======
+        "*T ...",
+        "*T Well, time to get into town."
+       
+>>>>>>> Stashed changes
     };
 
-    public static string[] shopkeeperScene =
+    public static string[] vilageIntro = //ingame
+    {
+        "*L Why would you want to go sleep in the fields outside the village?!",
+        "*L You know what will come out to get you!",
+        "I know you think you're safe because of the totems, but I remember a time before that safety."
+    };
+
+    public static string[] shopkeeperScene =//one frame 
     {
         "*S Toyen! Long time, no see. The nomad, ever-roaming, searching for his long lost family! Any closer?",
         "*T Maybe, I have a feeling, more than usual, that I’m going to find something soon.",
@@ -78,12 +97,12 @@ public class DialogueManager : MonoBehaviour
         "..."
     };
 
-    public static string[] makobiiIntro =
+    public static string[] makobiiIntro =//cutscene
     {
         "*T What? A Makobii!\nWhy do you show yourself here?\nThis is not a dream",
         "*M Toyen, dream scouring.\nWalking on wind, finds nothing.\nBut Makobii could",
         "*T Speak sense, creature. I know what you are.",
-        "*M (Laughs)",
+        "*M Heheheh",
         "*M We were not speaking in Haiku? Or did you grow tired of it, it’s not your mission after all.",
         "*T What? How do you--",
         "*M A Forgotten memory... How rare...",
@@ -91,7 +110,7 @@ public class DialogueManager : MonoBehaviour
         "*M None are as skilled as I, when it comes to dreaming I'll help you find it",
         "*T You are a dream-eater. You want off with it. I couldn’t possibly want this enough to agree to such a ridiculous offer.",
         "*T Besides, I’m close, I don’t need your help.",
-        "*M Close! He says... (Laughs)",
+        "*M Close! He says... Hahaha!",
         "*M Are you certain you are close to the memory, or maybe you were close to someone who could help.",
         "*M There is little use lying to a spirit...",
         "*M I know from your dream last night how long you’ve journeyed for this sole purpose.",
@@ -102,16 +121,24 @@ public class DialogueManager : MonoBehaviour
         "*M Heheh, I wouldn’t dream of it."
     };
 
-    public static string[] walkingOne =
+    public static string[] walkingOne =//ingame
     {
         "*T So, what happens if the next fragment is empty like the last couple have been?",
         "*M It’s hard to say, half the problem is you, you don’t have spiritual energy...,",
         "*T Oh? How so?",
-        "*M Well, humans tend to have very rich lives, it gives them lots to dream about. Not so much for you...",
-        "*T What? I don’t lead a boring life! I go on these journeys, I face challenges and overcome them! I should have plenty to dream about.",
-        "*M Hmm... maybe the only thing is you didn’t care about them, so your soul didn’t hold on to them. Say, do you come across the same challenges often?",
-        "*T Well, maybe… I get stuck on a lot of the same terrain... But that's because they're challenging for humans!",
-        "*M Or maybe you never adapted to them… maybe you’re stuck on them. No matter, I think we are close to a fragment."
+        "*M Well, humans tend to have very rich lives...",
+        "*M ...it gives them lots to dream about.",
+        "*M Not so much for you...",
+        "*T What? I don’t lead a boring life!",
+        "*T I go on these journeys, I face challenges and overcome them!",
+        "*T I should have plenty to dream about.",
+        "*M Hmm... maybe the only thing is you didn’t care about them...",
+        "*M ...so your soul didn’t hold on to them. ",
+        "*M Say, do you come across the same challenges often?",
+        "*T Well, maybe… I get stuck on a lot of the same terrain... ",
+        "*T But that's because they're challenging for humans!",
+        "*M Or maybe you never adapted to them… maybe you’re stuck on them. ",
+        "*M No matter, I think we are close to a fragment."
     };
 
     public static string[] dreamOne =
@@ -121,10 +148,11 @@ public class DialogueManager : MonoBehaviour
         "*M HA! No... more that you can’t begin to understand yourself, you face no inner conflict when you are out in the wild pursuing your goal, but when you ask for another loan from the shopkeeper, you feel shame.",
         "*T But I need supplies to continue on my journey, I’ll pay him back later, when I’m not so close.",
         "*M When you finally find your family, will you really go back and pay him? Will you even be able too?",
+        "*T ...",
         "*T Whatever, let’s keep going, we need to go deeper into the dream.",
         "*M Deeper? This is it, Toyen. It’s like I said, This is what you are dreaming of.",
         "*M People, passing by, not paying attention to you.",
-        "*M I feel a sort of empathy for you at this moment, it is similar to how Makobii are ignored now.",
+        "*M I feel a sort of empathy for you at this moment, it is not unlike how Makobii are ignored now.",
         "*M I used to get many meals, there would be cults that praised us, others would steer clear of us and make deals where we only ate a little before moving on.",
         "*M But humans and their talismans and Totems. The spiritual energy in them keeps us away. We are just another creature that has been conquered.",
         "*M But at least it’s not my fault that I’m an outcast.",
@@ -138,13 +166,17 @@ public class DialogueManager : MonoBehaviour
     public static string[] walkingTwo =
     {
         "*M If this keeps going, we may never find anything, even with my help.",
-        "*T You haven't exactly made it clear how you will help, how will we find this forgotten memory if my life is so boring?",
+        "*T You haven't exactly made it clear how you will help...",
+        "*T how will we find this forgotten memory if my life is so boring?",
         "*M I’m not sure, even the most boring prey–",
         "*T Pardon?",
-        "*M Sorry, old habit, even the most boring humans tend to have some memories scattered around their dreams that lead deeper into the subconscious...",
+        "*M Sorry, old habit...",
+        "*M Even the most boring humans tend to have some memories scattered around their dreams. ",
+        "*M Those memory fragments lead deeper into the subconscious...",
         "*M ...but we can’t get to that level if you don’t scrape the surface of your mind.",
         "*T Deeper level of the subconscious, would a drug help?",
-        "*M Well, perhaps, but it would take a long time for us to be able to make a sleeping agent out here in the forest...",
+        "*M Well, perhaps, but it would take a long time...",
+        "*M Making a sleeping agent out here in the forest is no easy feat",
         "*T I have some.",
         "*M Well why didn’t you use that earlier?",
         "*T I didn’t think about it.",
@@ -158,7 +190,7 @@ public class DialogueManager : MonoBehaviour
         "*M But it is interesting that the deeper level of your subconscious looks like this...",
         "*T Well? Where too, guide?",
         "*M There seems to be really only one direction, you need my guidance on where to go?",
-        "*T I guess not. After the first challenge in the area.",
+        "*T I guess not. ", //After the first challenge in the area.
         "*T What? Is something following us?", //activate bird caw sound effect here
         "*M There shouldn’t be...",
         "*M But if we have entered a deeper level of your subconscious, we may be exerting more spiritual energy...",
@@ -175,14 +207,22 @@ public class DialogueManager : MonoBehaviour
         "*M You will remember whatever memory it is, but I doubt it's your lost memory...",
         "*M It's likely something else you’ve forgotten over the years.A...small meal... in Makobii terms... but...",
         "*T A small meal?!",
+<<<<<<< Updated upstream
         "...",
+=======
+>>>>>>> Stashed changes
         "*M A talisman!",
         "*T You just want to eat my memory don’t you! That’s all you can think about!",
         "*M Aghh!",
         "...",
         "*T Makobii!",
         "*T  Makobii! Answer me!",
+<<<<<<< Updated upstream
         "...",
+=======
+        "*M ...",
+        "*T ...",
+>>>>>>> Stashed changes
         "*M You’ve had a TALISMAN. And did not tell me! Why should I guide you if at any moment you could unleash its power on me!",
         "*T Do you think I’m stupid enough to agree to this insane gambit if I didn’t have a way to stop you from taking it?",
         "*T Besides I was right to, you were just looking for your next meal!",
@@ -197,7 +237,8 @@ public class DialogueManager : MonoBehaviour
     public static string[] dreamThree =
     {
         "*T Makobii?",
-        "*T Makobii, are you there?", //toyen touches the memory shard
+        "*T Makobii, are you there?", 
+        "*T ...",//toyen touches the memory shard
         "*T Makobii? Is that you?",  //in dreamscape
         "...", 
         "*M I can’t hold them for long! Get your memory!",
@@ -207,7 +248,10 @@ public class DialogueManager : MonoBehaviour
     };
 
     public static string[] dreamThreeEnd =
-    {
+    {   "*T ...",
+        "*T ...",
+        "*T ...",
+        "*T ...",
         "*T NO! I was so close!",
         "...",
         "*T Makobii! What’s happening?",
@@ -237,10 +281,18 @@ public class DialogueManager : MonoBehaviour
 
     public static string[] dreamFourEnd =
     {
+<<<<<<< Updated upstream
         "...",
         "*T I don’t need it, I never did.",
         "...",
         "...", //makobii transforms
+=======
+        "*T ...",
+        "*T ..."
+        "*T I don’t need it, I never did.",
+        "*T ...",
+        "*M ...", //makobii transforms - light effect
+>>>>>>> Stashed changes
         "*M Why... why would you do such a thing? You had it, it was right in front of–",
         "*T I tricked you!",
         "*M Huh?",
