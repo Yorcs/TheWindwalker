@@ -414,6 +414,13 @@ public class DialogueManager : MonoBehaviour
                             GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
                         }
                         break;
+                    case "Dream1":
+                        if (imageCounter <= dreamOne.Length)
+                        {
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene4/cutscene4_" + imageCounter);
+                            GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
+                        }
+                        break;
                     case "Cutscene4":
                         if (imageCounter <= dreamOne.Length)
                         {
@@ -431,7 +438,7 @@ public class DialogueManager : MonoBehaviour
                     case "Cutscene6":
                         if (imageCounter <= dreamThree.Length)
                         {
-                            temp = Resources.Load<Sprite>("Sprites/Cutscene6/cutscene3_" + imageCounter);
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene6/cutscene6-" + imageCounter);
                             GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
                         }
                         break;
@@ -445,7 +452,7 @@ public class DialogueManager : MonoBehaviour
                     case "Cutscene8":
                         if (imageCounter <= dreamFourEnd.Length)
                         {
-                            temp = Resources.Load<Sprite>("Sprites/Cutscene8/cutscene3_" + imageCounter);
+                            temp = Resources.Load<Sprite>("Sprites/Cutscene8/cutscene8-" + imageCounter);
                             GameObject.Find("CutsceneImage").GetComponent<Image>().sprite = temp;
                         }
                         break;
