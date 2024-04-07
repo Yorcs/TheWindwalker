@@ -1,23 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Linq;
-using UnityEditor.Experimental.GraphView;
-using Cinemachine.Utility;
-using static Cinemachine.CinemachineFreeLook;
-using static Cinemachine.DocumentationSortingAttribute;
-using static UnityEngine.InputManagerEntry;
-using static UnityEngine.Rendering.DebugUI.Table;
-using static UnityEngine.Rendering.DebugUI;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
-using System.Security.Cryptography;
-using System.Threading;
-using System;
-using Unity.Burst.CompilerServices;
-using UnityEditor;
 
 //manages the display of cutscene dialogue
 //https://www.youtube.com/watch?v=_nRzoTzeyxU&t=6s
