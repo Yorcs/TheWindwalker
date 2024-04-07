@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 //manages the display of cutscene dialogue
-//https://www.youtube.com/watch?v=_nRzoTzeyxU&t=6s
+//referenced from https://www.youtube.com/watch?v=_nRzoTzeyxU&t=6s
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences = new Queue<string>();
@@ -17,6 +18,14 @@ public class DialogueManager : MonoBehaviour
     private bool autoLoading = false;
     private bool hotkeyEnabled = true;
 
+    public AudioClip dreamLoop;
+    public AudioClip forestLoop;
+    public AudioClip fragment;
+    public AudioClip makobiiGrowl;
+    public AudioClip makobiiLaugh;
+    public AudioClip makobiiStalk;
+    public AudioClip makobiiWindchimes;
+    public AudioClip smallMakobiiRoar;
 
     //cast
     //T = Toyen
@@ -332,6 +341,7 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    //give a string array to show
     public void StartDialogue(string[] dialogue)
     {
         dialogueCanvas.SetActive(true);
@@ -356,6 +366,7 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    //used to load out sentences
     IEnumerator ProgressSentence(string sentence)
     {
         //load out each character in the sentence one by one to be more dynamic
@@ -377,15 +388,17 @@ public class DialogueManager : MonoBehaviour
     //displays the next sentence in the queue
     public void DisplayNextSentence()
     {
-
+        //if text is loading, show the sentence in full
         if (loadingText)
         {
             StopAllCoroutines();
             if (GameObject.Find("Dialogue")) GameObject.Find("Dialogue").GetComponent<Text>().text = currSentence;
             loadingText = false;
         }
-        else
+        else //else load the next sentence
         {
+
+            //if there are no more sentences, end the cutscene
             if (sentences.Count == 0)
             {
                 hotkeyEnabled = false;
@@ -393,6 +406,7 @@ public class DialogueManager : MonoBehaviour
                 return;
             }
 
+            //check for sound effects/images
             hotkeyEnabled = true;
             //Debug.Log("/ UIAssets / Cutscenes / A1S3 / a1s3_" + imageCounter + ".png");
             Sprite temp;
@@ -478,7 +492,7 @@ public class DialogueManager : MonoBehaviour
 
             
             string sentence = sentences.Dequeue();
-            if (sentence.Equals("..."))
+            if (sentence.Equals("...")) //if text is ..., hide the dialogue/name boxes
             {
                 if (GameObject.Find("NameBox")) GameObject.Find("NameBox").GetComponent<CanvasGroup>().alpha = 0;
                 if (GameObject.Find("DialogueBox")) GameObject.Find("DialogueBox").GetComponent<CanvasGroup>().alpha = 0;
@@ -489,6 +503,7 @@ public class DialogueManager : MonoBehaviour
                 if (GameObject.Find("DialogueBox")) GameObject.Find("DialogueBox").GetComponent<CanvasGroup>().alpha = 1;
             }
 
+            //used to control the speaker
             switch (sentence.Substring(0, 2))
             {
                 case "*T":
@@ -511,6 +526,8 @@ public class DialogueManager : MonoBehaviour
                     break;
 
             }
+
+            //if this cutscene is camera based, swap the camera to face whoever is speaking
             if (FindAnyObjectByType<CameraManager>())
             {
                 switch (SceneManager.GetActiveScene().name)
@@ -546,19 +563,10 @@ public class DialogueManager : MonoBehaviour
                         }
                         break;
                 }
-                /*if (sentences.Count % 2 == 0)
-                {
-                    FindAnyObjectByType<CameraManager>().cam1.enabled = false;
-                    FindAnyObjectByType<CameraManager>().cam2.enabled = true;
-                }
-                else
-                {
-                    FindAnyObjectByType<CameraManager>().cam2.enabled = false;
-                    FindAnyObjectByType<CameraManager>().cam1.enabled = true;
-                }*/
 
             }
             StartCoroutine(ProgressSentence(sentence));
+            checkSounds(sentence);
         }     
     }
 
@@ -578,21 +586,7 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvas.GetComponent<CanvasGroup>().alpha = 0;
         dialogueCanvas.GetComponent<CanvasGroup>().interactable = false;
         dialogueCanvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
-        /*switch (SceneManager.GetActiveScene().name)
-        {
-            case "Act1Scene2":
-                SceneManager.LoadScene("Act1Scene3");
-                break;
-            case "Act1Scene3":
-                SceneManager.LoadScene("OutsideLevel1");
-                break;
-        }*/
-        /*if ((SceneManager.GetActiveScene().name == "Act2Scene2" && !ChoiceManager.scene2Done) ||
-            (SceneManager.GetActiveScene().name == "DreamLevelOneEnd" && !ChoiceManager.level1Done))     
-        {
-            FindObjectOfType<ChoiceManager>().GetComponent<CanvasGroup>().alpha = 1;
-            FindObjectOfType<ChoiceManager>().GetComponent<CanvasGroup>().interactable = true;
-        }*/
+   
         string sceneName = SceneManager.GetActiveScene().name;
         Debug.Log(sceneName);
         if (!sceneName.Equals("Dream0") && !sceneName.Equals("OutsideLevelZero") && !sceneName.Equals("Walking1") && !sceneName.Equals("Walking2") && !sceneName.Equals("Dream2") && !sceneName.Equals("Dream3") && !sceneName.Equals("Dream4"))
@@ -649,6 +643,7 @@ public class DialogueManager : MonoBehaviour
         autoLoad();
     }
 
+    //auto progresses dialogue 
     public void autoLoad()
     {
         autoLoading = true;
@@ -685,10 +680,36 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine("showSentence");
     }
 
+    //used for autoloading, shows sentence for 3 seconds
     IEnumerator showSentence()
     {
         yield return new WaitForSeconds(3f);
         autoLoad();
+    }
+
+    //checks if the current sentence should have a sound effect play
+    private void checkSounds(string sentence)
+    {
+
+        if (sentence!=null)
+        {
+            switch (SceneManager.GetActiveScene().name)
+            {
+                case "Cutscene1":
+                    if (sentence.Equals(introCut[3])) GetComponent<AudioSource>().PlayOneShot(fragment);
+                    break;
+                case "Cutscene2":
+                    if (sentence.Equals(tutorialEnd[1])) GetComponent<AudioSource>().PlayOneShot(makobiiWindchimes);
+                    break;
+                case "Cutscene3":
+                    if (sentence.Equals(makobiiIntro[0])) GetComponent<AudioSource>().PlayOneShot(makobiiWindchimes);
+                    else if (sentence.Equals(makobiiIntro[3])) GetComponent<AudioSource>().PlayOneShot(makobiiLaugh);
+                    break;
+            }
+            
+            
+            
+        }
     }
 
 }

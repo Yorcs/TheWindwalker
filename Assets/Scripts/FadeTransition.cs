@@ -81,6 +81,9 @@ public class FadeTransition : MonoBehaviour
                 case "Cutscene8":
                     SceneManager.LoadScene("Cutscene9");
                     break;
+                case "Credits":
+                    SceneManager.LoadScene("MainMenu");
+                    break;
             }          
         }
     }
