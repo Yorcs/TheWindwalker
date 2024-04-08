@@ -705,10 +705,19 @@ public class DialogueManager : MonoBehaviour
                     if (imageCounter == 1) GetComponent<AudioSource>().PlayOneShot(makobiiWindchimes);
                     else if (imageCounter == 4) GetComponent<AudioSource>().PlayOneShot(makobiiLaugh);
                     break;
+                case "Cutscene5":
+                    if (imageCounter == 9) GetComponent<AudioSource>().PlayOneShot(makobiiGrowl);
+                    else if (imageCounter == 11) GetComponent<AudioSource>().PlayOneShot(makobiiStalk);
+                    else if (imageCounter == 12 || imageCounter == 14 || imageCounter == 16) GetComponent<AudioSource>().PlayOneShot(makobiiGrowl);
+                    else if (imageCounter == 17) GetComponent<AudioSource>().PlayOneShot(fragment);
+                    break;
                 case "Cutscene6":
                     if (imageCounter == 3) GetComponent<AudioSource>().PlayOneShot(fragment);
                     else if (imageCounter == 6) GetComponent<AudioSource>().PlayOneShot(makobiiStalk);
                     else if (imageCounter == 8 || imageCounter == 9) GetComponent<AudioSource>().PlayOneShot(makobiiGrowl);
+                    break;
+                case "Cutscene7":
+                    if (imageCounter == 26) GetComponent<AudioSource>().PlayOneShot(fragment);
                     break;
                 case "Cutscene8":
                     if (imageCounter == 4) GetComponent<AudioSource>().PlayOneShot(makobiiGrowl);

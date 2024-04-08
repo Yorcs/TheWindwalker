@@ -253,8 +253,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.1845245, y: 461.6057}
-  m_SizeDelta: {x: 1483.8423, y: 290.5837}
+  m_AnchoredPosition: {x: -6.1845245, y: 488.57703}
+  m_SizeDelta: {x: 1483.8423, y: 270.1867}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &32809630
 Animator:
@@ -311,10 +311,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -368,8 +368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.184491, y: -774.39453}
-  m_SizeDelta: {x: 1483.8423, y: 188.8589}
+  m_AnchoredPosition: {x: 6.184491, y: -660.6643}
+  m_SizeDelta: {x: 1483.8423, y: 175.6023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &51605061
 Animator:
@@ -426,10 +426,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -763,7 +763,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
     m_FontSize: 50
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 50
@@ -1089,7 +1089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.1845245, y: -1387.624}
+  m_AnchoredPosition: {x: -6.1845245, y: -1251.2295}
   m_SizeDelta: {x: 1483.8423, y: 454.5124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &552134352
@@ -1285,8 +1285,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.184491, y: -289.39453}
-  m_SizeDelta: {x: 1483.8423, y: 188.8589}
+  m_AnchoredPosition: {x: 6.184491, y: -209.70801}
+  m_SizeDelta: {x: 1483.8423, y: 175.6023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &686505953
 Animator:
@@ -1343,10 +1343,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -1470,7 +1470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.1845245, y: -1088.3945}
+  m_AnchoredPosition: {x: -6.1845245, y: -952}
   m_SizeDelta: {x: 1483.8423, y: 143.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &803608925
@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
     m_FontSize: 50
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 50
@@ -1584,8 +1584,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.1845245, y: -532.39453}
-  m_SizeDelta: {x: 1483.8423, y: 188.8589}
+  m_AnchoredPosition: {x: -6.1845245, y: -435.65112}
+  m_SizeDelta: {x: 1483.8423, y: 175.6023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &928564400
 Animator:
@@ -1642,10 +1642,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -1958,7 +1958,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
     m_FontSize: 50
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 50
@@ -2013,8 +2013,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.184491, y: -59.39453}
-  m_SizeDelta: {x: 1483.8423, y: 197.1136}
+  m_AnchoredPosition: {x: 6.184491, y: 4.1476}
+  m_SizeDelta: {x: 1483.8423, y: 183.2775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1753317310
 Animator:
@@ -2071,10 +2071,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -2141,8 +2141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.1845245, y: 742.6057}
-  m_SizeDelta: {x: 1483.8423, y: 206.4872}
+  m_AnchoredPosition: {x: -6.1845245, y: 749.8527}
+  m_SizeDelta: {x: 1483.8423, y: 191.9931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1888514236
 Animator:
@@ -2199,10 +2199,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -2256,8 +2256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.1845245, y: 185.60547}
-  m_SizeDelta: {x: 1483.8423, y: 198.3458}
+  m_AnchoredPosition: {x: -6.1845245, y: 231.9502}
+  m_SizeDelta: {x: 1483.8423, y: 184.4232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1895327131
 Animator:
@@ -2314,10 +2314,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5cf5e658783d55844989c8975fda13b5, type: 3}
-    m_FontSize: 40
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 0
