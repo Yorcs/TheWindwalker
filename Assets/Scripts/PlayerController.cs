@@ -46,7 +46,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        damageAnimator = GameObject.FindGameObjectWithTag("DamageOverlay").GetComponent<Animator>();
+        GameObject damOvBase = GameObject.FindGameObjectWithTag("DamageOverlay");
+        if (damOvBase != null) damageAnimator = damOvBase.GetComponent<Animator>();
         //save the starting location/rotation for checkpoints
         startPos = transform.position;
         startRot = transform.rotation;

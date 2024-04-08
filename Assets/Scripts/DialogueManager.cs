@@ -166,10 +166,10 @@ public class DialogueManager : MonoBehaviour
         "*M Those memory fragments lead deeper into the subconscious...",
         "*M ...but we can’t get to that level if you don’t scrape the surface of your mind.",
         "*T Deeper level of the subconscious, would a drug help?",
-        "*M Well, perhaps, but it would take a long time...",
+        "*M Well, perhaps, but it would take a while...",
         "*M Making a sleeping agent out here in the forest is no easy feat.",
         "*T I have some.",
-        "*M Well why didn’t you use that earlier?",
+        "*M Well why didn’t you use it earlier?",
         "*T I didn’t think about it.",
         "*M Bah, anyways, we’re close to one now..."
     };
@@ -182,12 +182,12 @@ public class DialogueManager : MonoBehaviour
         "*T Well? Where too, guide?",
         "*M There seems to be really only one direction, you need my guidance on where to go?",
         "*T I guess not. ", //After the first challenge in the area.
-        "*T What? Is something following us?", //activate bird caw sound effect here
+        "*T I feel a presense, Is something following us?", //activate bird caw sound effect here
         "*M There shouldn’t be...",
-        "*M But if we have entered a deeper level of your subconscious, we may be exerting more spiritual energy...",
+        "*M But, if we have entered a deeper level of your subconscious, we may be exerting more spiritual energy...",
         "*T So another Makobii is after us?",
-        "*M Maybe, but it likely isn’t as put together as me...",
-        "*M ...so many Makobii are starving now, it may be on a rampage. Do not try to reason with it."
+        "*M Maybe, but it likely isn’t as put together as me.",
+        "*M Many Makobii are starving now, it may be on a rampage. Do not try to reason with it."
     };
 
     public static string[] dreamTwoEnd =
