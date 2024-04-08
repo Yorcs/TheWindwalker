@@ -696,14 +696,25 @@ public class DialogueManager : MonoBehaviour
             switch (SceneManager.GetActiveScene().name)
             {
                 case "Cutscene1":
-                    if (sentence.Equals(introCut[3])) GetComponent<AudioSource>().PlayOneShot(fragment);
+                    if (imageCounter == 4) GetComponent<AudioSource>().PlayOneShot(fragment);
                     break;
                 case "Cutscene2":
-                    if (sentence.Equals(tutorialEnd[1])) GetComponent<AudioSource>().PlayOneShot(makobiiWindchimes);
+                    if (imageCounter == 2) GetComponent<AudioSource>().PlayOneShot(makobiiWindchimes);
                     break;
                 case "Cutscene3":
-                    if (sentence.Equals(makobiiIntro[0])) GetComponent<AudioSource>().PlayOneShot(makobiiWindchimes);
-                    else if (sentence.Equals(makobiiIntro[3])) GetComponent<AudioSource>().PlayOneShot(makobiiLaugh);
+                    if (imageCounter == 1) GetComponent<AudioSource>().PlayOneShot(makobiiWindchimes);
+                    else if (imageCounter == 4) GetComponent<AudioSource>().PlayOneShot(makobiiLaugh);
+                    break;
+                case "Cutscene6":
+                    if (imageCounter == 3) GetComponent<AudioSource>().PlayOneShot(fragment);
+                    else if (imageCounter == 6) GetComponent<AudioSource>().PlayOneShot(makobiiStalk);
+                    else if (imageCounter == 8 || imageCounter == 9) GetComponent<AudioSource>().PlayOneShot(makobiiGrowl);
+                    break;
+                case "Cutscene8":
+                    if (imageCounter == 4) GetComponent<AudioSource>().PlayOneShot(makobiiGrowl);
+                    else if (imageCounter == 6) GetComponent<AudioSource>().PlayOneShot(fragment);
+                    else if (imageCounter == 9) GetComponent<AudioSource>().PlayOneShot(makobiiWindchimes);
+                    else if (imageCounter == 21) GetComponent<AudioSource>().PlayOneShot(makobiiLaugh);
                     break;
             }
             
