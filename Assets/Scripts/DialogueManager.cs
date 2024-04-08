@@ -84,8 +84,8 @@ public class DialogueManager : MonoBehaviour
         "*T Only I will decide when that is.",
         "*S All right. I’ll give you a loan. Whether or not you pay me back.",
         "*S It’ll last you a week, but I got one little gift for you.",
-        "*S You look exhausted. Use this to rest when you really need it.",
-        "..."
+        "*S It's sleeping agent.",
+        "*S You look exhausted. Use this to rest when you really need it."
     };
 
     public static string[] makobiiIntro =//cutscene
