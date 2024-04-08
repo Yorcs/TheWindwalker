@@ -24,17 +24,24 @@ public class PlayerParticles : MonoBehaviour
 
     public void leftStep()
     {
-        ParticleSystem tempParts = Instantiate(partBase);
-        tempParts.transform.position = leftFoot.transform.position;
-        tempParts.gameObject.SetActive(true);
-        tempParts.Play();
+        if (partBase != null)
+        {
+            ParticleSystem tempParts = Instantiate(partBase);
+            tempParts.transform.position = leftFoot.transform.position;
+            tempParts.gameObject.SetActive(true);
+            tempParts.Play();
+        }
+        
     }
     public void rightStep()
     {
-        ParticleSystem tempParts = Instantiate(partBase);
-        tempParts.transform.position = rightFoot.transform.position;
-        tempParts.gameObject.SetActive(true);
-        tempParts.Play();
+        if (partBase != null)
+        {
+            ParticleSystem tempParts = Instantiate(partBase);
+          tempParts.transform.position = rightFoot.transform.position;
+         tempParts.gameObject.SetActive(true);
+          tempParts.Play();
+        }
     }
 
 }

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 //controls the player
 //https://www.youtube.com/watch?v=a-rogIWEJlY
 public class PlayerController : MonoBehaviour
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
+    public Animator damageAnimator;
 
     [SerializeField] float groundCheckDistance = 1f;
 
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        damageAnimator = GameObject.FindGameObjectWithTag("DamageOverlay").GetComponent<Animator>();
         //save the starting location/rotation for checkpoints
         startPos = transform.position;
         startRot = transform.rotation;
@@ -208,6 +211,7 @@ public class PlayerController : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "Dream4")
             {
                 health = 0;
+                if (damageAnimator != null) damageAnimator.SetTrigger("DamageInstance");
                 FindAnyObjectByType<Path>().backToStart();
             }       
         }else if(other.tag == "Checkpoint") //if player collides with a checkpoint, set that as the new starting pos/rot
@@ -229,6 +233,7 @@ public class PlayerController : MonoBehaviour
             loseHealth = true;
             regenHealth = false;
             delayCounter = 0;
+            if (damageAnimator != null) damageAnimator.SetBool("Damaged", true);
         }
     }
 
@@ -238,6 +243,7 @@ public class PlayerController : MonoBehaviour
         if(other.tag == "Damage") {
             loseHealth = false;
             regenHealth = true;
+            if (damageAnimator != null) damageAnimator.SetBool("Damaged", false);
         }
     }
 

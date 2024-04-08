@@ -10,6 +10,7 @@ TagManager:
   - Water
   - CutsceneOne
   - CutsceneTwo
+  - DamageOverlay
   layers:
   - Default
   - TransparentFX
